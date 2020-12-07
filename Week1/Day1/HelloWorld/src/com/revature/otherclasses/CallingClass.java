@@ -78,7 +78,10 @@ public class CallingClass {
 		
 		Moon m = new Moon("The Moon", false, 0.3, "Earth");
 		
+		m.myPlanet = "Mars";
+		
 		m.orbit("apples", 1.2);
+		m.crash(p.name , p2.name);
 		
 //		
 	}

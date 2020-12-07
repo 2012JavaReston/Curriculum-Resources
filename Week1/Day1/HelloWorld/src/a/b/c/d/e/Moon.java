@@ -2,7 +2,7 @@ package a.b.c.d.e;
 
 public class Moon extends Planet{
 	
-	String myPlanet; 
+	public String myPlanet; 
 	
 	public Moon() {
 		super(); // This is a way of calling our parent constructor. 
@@ -14,8 +14,8 @@ public class Moon extends Planet{
 		this.myPlanet = myPlanet;
 	}
 	
-	public void crash() {
-		System.out.println("Kaboom");
+	public void crash(String planet, String myPlanet) {
+		System.out.println("Kaboom " + planet + " " + myPlanet + " " + this.myPlanet);
 	}
 
 }
