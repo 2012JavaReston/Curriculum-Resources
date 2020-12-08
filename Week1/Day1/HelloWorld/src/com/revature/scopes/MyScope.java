@@ -2,7 +2,7 @@ package com.revature.scopes;
 
 public class MyScope {
 	
-	static int i = 100;
+	static int i = 100; //class scope 
 	
 	public static void add() {
 		int i = 0;
@@ -19,6 +19,21 @@ public class MyScope {
 		i = i - 10;
 	}
 	
+	
+	/*
+	 * Scopes of a variable 
+	 * 
+	 * Class scope:
+	 * 		Variables can be referenced anywhere within the class 
+	 * 
+	 * Method Scope:
+	 * 		Variables can only be referenced within the method 
+	 * 
+	 * Loop scope 
+	 * 		Variables can only be defined within the method. 
+	 * 
+	 */
+	
 	public static void main(String[] apples) {
 		System.out.println("Welcome to my apples method");
 		
@@ -33,8 +48,12 @@ public class MyScope {
 		
 		System.out.println(i);
 		
-		add();
+		MyScope.add();
 		minus();
+		
+		for(i = 0; i< 10; i++) {
+			
+		}
 		
 		System.out.println(i);
 		
