@@ -72,8 +72,8 @@ public class CallingClass {
 		
 		p.orbit("randomString",2.0);
 		
-		orbit(); // we need a reference
-		Planet.orbit()// We need an obect that can do it for us. 
+//		orbit(); // we need a reference
+//		Planet.orbit()// We need an object that can do it for us. 
 		
 		System.out.println(p.mass);
 		
