@@ -29,6 +29,9 @@ public class ScannerDriver {
 //		
 //		System.out.println("Goodbye user, you're input was " + input);
 		
+		Object obj = new Object();
+//		obj.toString("apples"); toString method signature has no arguments within it
+		
 		int inputInt = sc.nextInt();
 		
 		if(inputInt == 1) {
