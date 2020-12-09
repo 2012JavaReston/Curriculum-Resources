@@ -113,7 +113,7 @@ public class Driver {
 		
 		raceTrack(car);
 		raceTrack(fastCar);
-		raceTrack((Car) luxuryCar);
+		raceTrack((Car) luxuryCar); //In this case it works fine, if all the methods are implemented. But we don't have a guarantee. 
 		
 		
 		

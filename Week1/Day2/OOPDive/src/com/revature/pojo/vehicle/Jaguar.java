@@ -1,6 +1,6 @@
 package com.revature.pojo.vehicle;
 
-public final abstract class Jaguar implements Car{
+public abstract class Jaguar implements Car {
 
 	/*
 	 * Abstract classes allow you to have both concrete methods and abstract methods 

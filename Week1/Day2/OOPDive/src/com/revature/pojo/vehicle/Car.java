@@ -13,6 +13,8 @@ public interface Car {
 			//makes it a const. 
 			// Cannot change the variable once it's been defined, it's immutable. 
 	
+	//What does the final keyword do on Classes and methods! 
+	
 	
 	/*
 	 * Interfaces and Abstract classes are how Abstraction in Java is implemented!
