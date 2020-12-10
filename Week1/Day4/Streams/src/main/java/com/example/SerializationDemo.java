@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -47,23 +48,34 @@ public class SerializationDemo {
 	}
 
 	private static void readObject(String filename) {
+		
+		ObjectInputStream ois = null;
 
 		try {
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename));
+			ois = new ObjectInputStream(new FileInputStream(filename));
 			
 			Planet p = (Planet) ois.readObject();
 			System.out.println(p);
 			
-			ois.close();
+			
 		}catch (Exception e) {
 			System.out.println("Something terrible happened!");
+		} finally {
+			
+			try {
+				ois.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 	}
 
 	private static void writeObject(String filename, Planet p) {
-		try {
-			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename));
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))){
+			//try with resources
+			// The resouces inside the paranethiss will be closed after the try catch block executes!
 			oos.writeObject(p);
 			oos.close();
 			

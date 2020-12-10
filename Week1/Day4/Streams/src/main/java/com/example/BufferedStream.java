@@ -21,14 +21,13 @@ public class BufferedStream {
 	private static void readCharacterStream(String filename) {
 
 
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(filename));
+		try (BufferedReader reader = new BufferedReader(new FileReader(filename))){
+			
 			
 			String line = "";
 			while((line = reader.readLine())!= null) {
 				System.out.println(line);
 			}
-			reader.close();
 			}catch(Exception e){
 				//nothing
 		}
@@ -37,12 +36,12 @@ public class BufferedStream {
 
 	private static void writeCharacterStream(String filename) {
 
-		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))){
+			
 			
 			writer.write("Hi There! \n");
 			writer.write("Buffered streams are faster and easier!\n");
-			writer.close();
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
