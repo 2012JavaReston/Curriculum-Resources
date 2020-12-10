@@ -30,10 +30,19 @@ public class Garbage {
 		System.out.println("Help me!");
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		return name;
+	}
+
+
+
 	@Override 
 	public boolean equals(Object o) {
 		
-		if(!(this.name == ((Garbage) o).name)) {
+		if(this.name.equals(((Garbage) o).name)) {
 			return true;
 		}
 		return false;
