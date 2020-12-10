@@ -28,6 +28,8 @@ public class ChracterStream {
 				System.out.println((char) i);
 			}
 			
+			reader.close();
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
