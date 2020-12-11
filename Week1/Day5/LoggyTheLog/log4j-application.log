@@ -1,0 +1,27 @@
+2020-12-11 10:21:25 INFO  MiniProject:15 - This is an info block!
+2020-12-11 10:24:41 INFO  MiniProject:16 - This is an info block!
+2020-12-11 10:26:19 INFO  MiniProject:24 - This is an info block!
+2020-12-11 10:26:19 INFO  MiniProject:31 - The customer has succesfully logged in!
+2020-12-11 10:27:15 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:27:15 WARN  MiniProject:37 - Customer unable to log in!
+2020-12-11 10:27:39 WARN  MiniProject:37 - Customer unable to log in!
+2020-12-11 10:28:00 WARN  MiniProject:39 - Customer unable to log in!
+2020-12-11 10:28:28 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:29:19 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:29:36 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:29:36 INFO  MiniProject:39 - The customer has succesfully logged in!
+2020-12-11 10:29:51 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:29:51 DEBUG MiniProject:36 - We're debugging now!
+2020-12-11 10:29:51 INFO  MiniProject:39 - The customer has succesfully logged in!
+2020-12-11 10:32:18 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:32:18 DEBUG MiniProject:36 - We're debugging now!
+2020-12-11 10:32:18 INFO  MiniProject:39 - The customer has succesfully logged in!
+2020-12-11 10:33:10 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:33:10 DEBUG MiniProject:36 - We're debugging now!
+2020-12-11 10:33:10 INFO  MiniProject:39 - The customer has succesfully logged in!
+2020-12-11 10:38:44 INFO  MiniProject:25 - This is an info block!
+2020-12-11 10:38:44 DEBUG MiniProject:36 - We're debugging now!
+2020-12-11 10:38:44 INFO  MiniProject:39 - The customer has succesfully logged in!
+2020-12-11 10:38:44 ERROR MiniProject:49 - There is an errror going on
+java.lang.IndexOutOfBoundsException
+	at com.revature.MiniProject.main(MiniProject.java:49)

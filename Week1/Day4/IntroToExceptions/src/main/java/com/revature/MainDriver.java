@@ -57,7 +57,7 @@ public class MainDriver {
 		String fruit = sc.nextLine();
 		
 		if(fruit.equals("Tomato")) {
-			throw new BusinessExceptions(); //Force us to handle RuntimeExceptions, which are not checked
+			throw new BusinessExceptions("Bad!"); //Force us to handle RuntimeExceptions, which are not checked
 		}
 	}
 	

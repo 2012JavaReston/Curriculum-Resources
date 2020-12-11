@@ -7,13 +7,15 @@ import java.io.FileWriter;
 
 public class BufferedStream {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 		
 		String filename = "./bufferedExample.txt";
 		writeCharacterStream(filename);
 		readCharacterStream(filename);
 		
 		System.out.println("Done!");
+		
+		throw new Throwable();
 		
 		
 	}
