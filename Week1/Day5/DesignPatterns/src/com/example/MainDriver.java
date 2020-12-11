@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.model.BigVan;
 import com.example.model.Car;
 import com.example.model.VanFactory;
 import com.example.model.Vehicle;
@@ -41,6 +42,7 @@ public class MainDriver {
 		//---------------Facotry design related code----------------------
 		
 		Vehicle v = VanFactory.getVehicle("Luxury");
+		v = new BigVan();
 		
 		System.out.println(v.getClass());
 		

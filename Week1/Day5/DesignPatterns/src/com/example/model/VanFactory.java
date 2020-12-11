@@ -18,7 +18,7 @@ public class VanFactory {
 			toBeSentOff = new SmallVan();
 		}else if(type.equals("Luxury")) {
 			
-			toBeSentOff = new LuxuryVan(4,1,gold);
+			toBeSentOff = new LuxuryVan();
 		}
 		
 		System.out.println("Welcome to the factory, here's the vehicle!");
