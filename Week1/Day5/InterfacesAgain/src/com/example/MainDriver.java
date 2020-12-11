@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Comparator;
+
 public class MainDriver {
 	
 	/*
@@ -9,7 +11,7 @@ public class MainDriver {
 	 * 		There are no methods to implement. This is used to "mark" the interface in a IS-A relationship
 	 * 		In the case of serializable, it tells the JVM that this entity is expected to be serialized (provides metadata)
 	 * 
-	 * Functional Interfaces: Comparable 
+	 * Functional Interfaces: Comparator 
 	 * 		Have one and ONLY one method to be implemented. 
 	 * 
 	 * (Normal) Interfaces:
@@ -25,6 +27,10 @@ public class MainDriver {
 		Functional f = (int x,int y) ->{ System.out.println(x +y);};
 		
 		f.add(1, 2);
+		
+		Comparator compareId = (Object o,Object j) -> {
+			return 0;
+		};
 		
 	}
 
