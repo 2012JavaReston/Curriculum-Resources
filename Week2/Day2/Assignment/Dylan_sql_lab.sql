@@ -58,6 +58,7 @@ begin
 	delete from invoice  where customer_id = c_id;
 	delete from customer where customer_id = c_id;
    
+   -- This return is useless btw not sure how to make one without it yet. Needs further research lol
 	return i_id;
 end;
 $$;
