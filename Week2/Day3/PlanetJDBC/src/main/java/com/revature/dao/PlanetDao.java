@@ -9,11 +9,15 @@ public interface PlanetDao {
 	//I want to define the CRUD methods 
 	
 	//Create methods 
-	public void insertPlanet(Planet p);
+	void insertPlanetStatement(Planet p);
+
+	void insertPlanetPreparedStatement(Planet p);
+
+	void insertPlanetProcedure(Planet p);
 	
 	//READ methods defined
 	public Planet selectPlanetByName(String s);
-	public List<Planet> selectAll();
+	public List<Planet> selectAllPlanets();
 	public List<Planet> selectRingedPlanets();
 	
 	//UPDATE
@@ -21,6 +25,8 @@ public interface PlanetDao {
 	
 	//DELETE
 	public void deletePlanet(Planet p);
+
+	
 	
 
 }
