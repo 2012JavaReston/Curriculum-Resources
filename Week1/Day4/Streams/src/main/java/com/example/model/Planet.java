@@ -12,6 +12,7 @@ public class Planet implements Serializable{
 	
 	private transient int id; //Transient non-access modifier will stop the variable from being serialized!
 	private String name;
+	private double size = 1;
 	
 	public Planet() {
 		super();
