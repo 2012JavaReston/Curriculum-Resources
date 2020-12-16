@@ -75,9 +75,22 @@ public class MainDriver {
 		
 		Thread tr = new Thread(r2);
 		tr.start();//When we invoke a thread's start, that creates a new thread that is running
-		// concureently with the Main thread!
+		// concurently with the Main thread!
+		
+		//methods
+		// .isCurrentThread
+		// .isDaemon
+		// .wait
+		// .notify
+		// .start
+		// .run
 		
 		
+		//There are couple of common problems that may occur with multithreading
+		//Explain why they occur, and how to address it. 
+		//Synchronization 
+		//Deadlock 
+		//Producer-consumer
 	}
 
 }

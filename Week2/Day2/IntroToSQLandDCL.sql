@@ -29,9 +29,14 @@
 --		provide fine grained control over what users can do or access. 
 --		Grant and Revoke 
 
-create role java_login LOGIN password 'p4ssword';
+create role rando_login LOGIN password 'p4ssword';
 
 grant all privileges on schema public to rando_login;
+
+GRANT SELECT ON TABLE public.planets TO rando_login;
+GRANT INSERT ON TABLE public.planets TO rando_login;
+GRANT ALL ON TABLE public.planets TO rando_login;
+
 		
 		
 		

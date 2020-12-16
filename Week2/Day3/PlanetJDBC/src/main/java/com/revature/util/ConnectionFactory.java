@@ -27,9 +27,9 @@ public class ConnectionFactory {
 	
 	// The url in Java is slightly different to what we put in Dbeaver. 
 	// "jdbc:postgresql://[ENDPOINT]/[DATABASE]
-	private static final String URL = "jdbc:postgresql://database-1.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres";
-	private static final String USERNAME = "postgres";
-	private static final String PASSWORD = "p4ssw0rd";
+	private static final String URL = "jdbc:postgresql://<endpoint>/postgres";
+	private static final String USERNAME = ;
+	private static final String PASSWORD = ;
 	
 	private static Connection conn;
 	
