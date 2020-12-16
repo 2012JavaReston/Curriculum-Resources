@@ -4,7 +4,7 @@
 -- CRUD - Create, Read, Update, Delete 
 
 --Insert values into our tables 
-insert into planets values(13, 'Mercry2',null,true,0);
+insert into planets values(13, 'Mercry2','placeholder',true,null);
 
 --If you don't want to put in all the value, then you specify the columns
 
@@ -26,7 +26,9 @@ insert into planets (planet_name, planet_description, rings, number_of_moons) va
 	('Saturn', 'very ringy', true, 82),
 	('Uranus', 'blue', true, 27),
 	('Neptune', 'getting nippy', true, 14),
-	('Pluto', 'you cannot get rid of me', false, 2)
+	('Pluto', 'you cannot get rid of me', false, 2);
+
+	
 	
 ------------------------------------------------------------------------------------------
 	
