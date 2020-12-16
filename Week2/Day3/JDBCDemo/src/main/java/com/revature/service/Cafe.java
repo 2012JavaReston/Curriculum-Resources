@@ -1,42 +1,64 @@
 package com.revature.service;
 
-import com.revature.models.Customer;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.revature.dao.UserDao;
+import com.revature.dao.UserDaoImpl;
+import com.revature.models.User;
 
 public class Cafe {
 	
-	public void newOrder(Customer c) {
+	private static UserDao uDao = new UserDaoImpl();
+	
+	public void createNewUser() {		
+		
+			User c = new User();
+			System.out.println("Welcome user");
+			
+			Scanner sc = new Scanner(System.in);
+			String name = sc.next();
+			c.setName(name);
+			String email = sc.next();
+			c.setEmail(email);
+			c.setOrder(0);
+			c.setEmployee(false);
+			uDao.insertUser(c);
+//			return (new PlanetDaoImpl()).selectPlanetByName(p.getName());
+		}
 		
 		/*
-		 * sc = scanner.ask(What do you want?)
-		 * inputFood = sc.nextLine();
+		 * sc.scanner.ask(what do you want)
+		 * imputtFood = sc.nextLine();
 		 * 
-		 * Order o = new ORder();
-		 * o.add(inputFood)
+		 * Order o = new Order();
+		 * o.add(imputFood)
 		 * 
-		 * c.addORder(o);
+		 * c.addOrder(o)
 		 * 
 		 * CustomerDao cs = new CustomerDaoImpl();
-		 * 
 		 * cs.insertOrder(o);
-		 * cs.updateCustomer(c);
-		 * 
-		 * 
+		 * cs.updateCustomer(c)
 		 * 
 		 */
 		
-	}
+//		
+//	}
+//	
+//	public void createCustomerProfile() {
+//		/*
+//		 * List<Customer> Clist = CustomerDao.selectAll()
+//		 * 
+//		 * if(Clist.contains(c){
+//		 * CustomerDao.insertCustomer(c);
+//		 * }else{
+//		 * sysout(customer does not exist)
+//		 * }
+//		 * 
+//		 */
+//		
+//	}
 
-	public void createCustomerProfile() {
-		/*
-		 * List<Customer> Clist = CustomerDao.selectAll()
-		 * 
-		 * if(CList.contains(c)){
-		 * 	CustomerDao.insertCustomer(c);
-		 * }else{
-		 * 		syso("Customer does not exist");
-		 * }
-		 * 
-		 */
-	}
-	
 }

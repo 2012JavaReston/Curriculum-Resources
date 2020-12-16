@@ -4,12 +4,30 @@
   <artifactId>JDBCDemo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <!-- XML : eXtensible Markup Language  : used to store data 
-  		HTML: Hyper text Markup Language : used to render visula documents
+  <!-- XML : extensible Markup Language : used to store data
+  		HTML: Hyper text Markup Language: used to render visual documents
   		
-  		-->
-<properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-	</properties>
+  		<project>
+  			<project-name>
+  			<project-group>
+  			<java-configuration>
+  				<jvm>
+  				<jre>
+  		 -->
+  
+  <properties>
+	  <maven.compiler.target>1.8</maven.compiler.target>
+	  <maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+  
+    <dependencies>
+	  <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.2.18</version>
+	</dependency>
+  
+  </dependencies>
+  
 </project>
