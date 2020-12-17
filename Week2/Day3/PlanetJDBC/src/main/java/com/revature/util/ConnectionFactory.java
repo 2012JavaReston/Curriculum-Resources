@@ -28,17 +28,15 @@ public class ConnectionFactory {
 	// The url in Java is slightly different to what we put in Dbeaver. 
 	// "jdbc:postgresql://[ENDPOINT]/[DATABASE]
 	private static final String URL = "jdbc:postgresql://<endpoint>/postgres";
-	private static final String USERNAME;
-	private static final String PASSWORD;
+	private static final String USERNAME ;
+	private static final String PASSWORD ;
 	
 	private static Connection conn;
 	
 	public static Connection getConnection() {
 		
 		try {
-			if(conn == null) {
-				conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-			}
+				conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);	
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
