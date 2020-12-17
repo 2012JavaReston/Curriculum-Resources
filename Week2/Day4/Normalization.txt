@@ -1,0 +1,24 @@
+Normalization
+	Optimise the structure of the data in our database. 	
+	Reduces redundancy of data and improves data integrity and consistency.
+
+There are 6 Normal Forms. 
+
+The industry standard is 3NF 
+
+We want to achieve 1st Normal Form:
+	We need Primary key column 
+	Atomic columns (as granular as possible)
+	No repeating groups 
+
+2nd Normal Form:
+	We need 1st Normal Form 
+	No partial dependency 
+	Every non key attribute is fully dependent on the primary key.
+
+3rd Normal Form:
+	We need 2nd Form.
+	No transitive dependency. 
+
+A good way to remember the normal forms are:
+	The Key, the whole key, nothing but the key
