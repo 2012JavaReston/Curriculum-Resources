@@ -18,15 +18,15 @@ public interface UserDao {
 	public void insertUser(User c);
 	
 	//SELECT statements
-	public User selectUserById(int id);
+	public User selectUserByName(String name);
 	public List<User> selectAllUser();	
 	public List<User> selectMvps();
 	
 	//UPDATE
-	public void updateUser(User c);
+	public void updateUser(User u, User newU);
 
 	//DELETE
-	public void deleteUser(User c);
+	public Boolean deleteUser(String u);
 	
 
 }

@@ -12,53 +12,42 @@ import com.revature.models.User;
 public class Cafe {
 	
 	private static UserDao uDao = new UserDaoImpl();
+	Scanner sc = new Scanner(System.in);
 	
 	public void createNewUser() {		
 		
 			User c = new User();
-			System.out.println("Welcome user");
+			List<User> existingUsers = getAllUsers();
+//			List<User> existingUsers = new ArrayList<>();
 			
-			Scanner sc = new Scanner(System.in);
-			String name = sc.next();
+			System.out.println("Welcome user! Enter username.");
+			String name = sc.nextLine();
 			c.setName(name);
-			String email = sc.next();
+			//Basic verification;
+			for ( User u : existingUsers) {
+				if (u.getName().equals(name)) {
+					System.out.println("Username taken!  Please try again!");
+					createNewUser();
+				}
+			}
+			System.out.println("Enter password.");
+			String email = sc.nextLine();
 			c.setEmail(email);
 			c.setOrder(0);
-			c.setEmployee(false);
+//			c.setEmployee(false);
 			uDao.insertUser(c);
 //			return (new PlanetDaoImpl()).selectPlanetByName(p.getName());
 		}
-		
-		/*
-		 * sc.scanner.ask(what do you want)
-		 * imputtFood = sc.nextLine();
-		 * 
-		 * Order o = new Order();
-		 * o.add(imputFood)
-		 * 
-		 * c.addOrder(o)
-		 * 
-		 * CustomerDao cs = new CustomerDaoImpl();
-		 * cs.insertOrder(o);
-		 * cs.updateCustomer(c)
-		 * 
-		 */
-		
-//		
-//	}
-//	
-//	public void createCustomerProfile() {
-//		/*
-//		 * List<Customer> Clist = CustomerDao.selectAll()
-//		 * 
-//		 * if(Clist.contains(c){
-//		 * CustomerDao.insertCustomer(c);
-//		 * }else{
-//		 * sysout(customer does not exist)
-//		 * }
-//		 * 
-//		 */
-//		
-//	}
-
+	public List<User> getAllUsers() {
+		return uDao.selectAllUser();
+	}
+	public void deleteUser() {
+		System.out.println("What user would you like to delete?");
+		String uName = sc.nextLine();
+		if(uDao.deleteUser(uName)) {
+			System.out.println("User successfully deleted.");
+		} else {
+			System.out.println("Ooopsie!");
+		}
+	}
 }

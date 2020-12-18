@@ -27,6 +27,12 @@
 	    <artifactId>postgresql</artifactId>
 	    <version>42.2.18</version>
 	</dependency>
+	
+	<dependency>
+			<groupId>io.github.cdimascio</groupId>
+			<artifactId>java-dotenv</artifactId>
+			<version>5.2.2</version>
+		</dependency>
   
   </dependencies>
   

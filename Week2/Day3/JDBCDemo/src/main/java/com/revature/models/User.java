@@ -6,6 +6,7 @@ public class User {
 	private String email;
 	private int order;
 	private boolean isEmployee;
+	private int userId;
 	
 	
 	public User() {
@@ -13,20 +14,24 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	
-	
-	
-	public User(String name, String email, int order, boolean isEmployee) {
+	public User(int userID, String name, String email, int order, boolean isEmployee) {
 		super();
+		this.userId = userID;
 		this.name = name;
 		this.email = email;
 		this.order = order;
 		this.isEmployee = isEmployee;
 	}
 
+	public int getUserId()
+		{
+			return userId;
+		}
 
-
+	public void setUserId(int userId)
+		{
+			this.userId = userId;
+		}
 
 	public String getName() {
 		return name;
@@ -70,7 +75,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", email=" + email + ", order=" + order + ", isEmployee=" + isEmployee + "]";
+		return "User [name=" + name + ", email=" + email + ", order=" + order + ", isEmployee=" + isEmployee + "] \n";
 	}
 	
 	
