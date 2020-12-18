@@ -16,9 +16,9 @@ drop table planets;
 --If we remove the planets table or remove data inside, we will have orphan records (when referential integrity is violated)
 --It will point to something that does not exist!
 
-insert table stars(
+create table stars(
 	star_id serial primary key, 
-	star_name varchar(30);
+	star_name varchar(30)
 )
 create table planets (
 	planet_id serial primary key, 
@@ -40,7 +40,7 @@ insert into planets(planet_name,planet_description) values ('Earth', 'blue and g
 insert into planets(planet_name,planet_description) values ('Earth 2.0', 'brown and green');
 
 insert into planets(planet_name,planet_description) values ('Mars', 'Reddy');
-insert into planets(planet_name,planet_description) values ('Mars', 'Reddy2');
+--insert into planets(planet_name,planet_description) values ('Mars', 'Reddy2');
 
 insert into moons(moon_name, my_planet) values ('The Moon', 
 	(select planet_id from planets where planet_name = 'Earth'));

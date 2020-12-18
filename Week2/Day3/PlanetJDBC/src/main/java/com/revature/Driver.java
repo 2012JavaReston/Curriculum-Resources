@@ -11,17 +11,21 @@ public class Driver {
 	
 	public static void main(String[] args) {
 		
+		System.out.println(System.getenv("DB_USERNAME"));
+		System.out.println(System.getenv("DB_PASSWORD"));
+		System.out.println(System.getenv("random"));
+		
 		//creating a menu mode, you would be using a scanner object instead of hardcoding the decision
-		System.out.println("Welcome user");
-		System.out.println("Choose a mode");
-		
-		String mode = "God";
-		
-		if(mode.equals("God")) {
-			
-			uM.getChosenPlanet(new Planet());
-			
-		}
+//		System.out.println("Welcome user");
+//		System.out.println("Choose a mode");
+//		
+//		String mode = "God";
+//		
+//		if(mode.equals("God")) {
+//			
+//			uM.getChosenPlanet(new Planet());
+//			
+//		}
 	}
 
 }
