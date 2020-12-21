@@ -1,0 +1,91 @@
+# Week 3 Http Topics
+
+- [HTTP](https://tools.ietf.org/html/rfc7231)
+  - Request vs Response
+  - [Verbs:](https://tools.ietf.org/html/rfc7231#section-4)
+    - Get vs Post
+  - URI
+  - Body
+
+- [HTML](https://www.w3schools.com/html/)
+  - HTML5
+  - [Forms:](https://www.w3schools.com/html/html_forms.asp)
+    - Action
+    - Inputs
+    - Submit
+  - Elements:
+    - Attributes
+    - Id
+    - Class
+  - Head tags: meta, title, link
+  - Body tags: div, a, p, h1-h6
+  - Style & Script tags
+- [DOM - Document Object Model](https://www.w3schools.com/whatis/whatis_htmldom.asp)
+
+- [CSS](https://www.w3schools.com/css/)
+  - CSS3
+  - Cascade priority:
+    - external
+    - internal
+    - in-line
+  - [Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - Id vs Class tag
+
+- [JavaScript](https://www.w3schools.com/js/)
+  - [EcmaScript 6](https://www.ecma-international.org/ecma-262/6.0/)
+  - Variables:
+    - Scopes
+    - var, let, const
+    - hoisting
+  - Objects, arrays, functions
+  - JSON stringify & parse
+  - [DOM API](https://www.w3schools.com/js/js_htmldom.asp)
+  - [Prototypical Inheritance](https://javascript.info/prototype-inheritance)
+  - Callbacks & closures
+  - Events:
+    - Bubbling vs Capturing
+    - Event.stopPropagation()
+    - Listeners
+  - Template literals
+  - Lambda arrow notation
+  - [Class Syntax](https://www.w3schools.com/js/js_classes.asp)
+  - [AJAX: Asynchronous JavaScript & XML](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
+    - [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+  - [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+- [Servlet](https://docs.oracle.com/javaee/5/tutorial/doc/bnafe.html)
+  - [J2EE Architecture](https://docs.oracle.com/cd/B10570_07/migrate.902/a95110/overview.htm#1005629)
+    - Browser/Server Communication
+  - Servlet Lifecycle
+  - Web Container
+  - [Servlet API](https://docs.oracle.com/javaee/7/api/javax/servlet/package-summary.html)
+    - Servlet Interface, GenericServlet,HttpServlet
+    - Servlet Inheritance Tree/Hierachy
+    - init(), service(), destroy()
+    - doGet(), doPost()
+    - HttpServletRequest, HttpServletResponse
+    - RequestDispatcher
+    - Forward vs Redirect
+    - Print Writer
+    - Form Processing
+    - Request Object
+      - Retrieving Parameters
+  - Deployment Descriptor:
+    - web.xml
+    - @WebServlet
+    - ServletContext vs ServletConfig
+    - Url mapping
+    - Load on startup
+  - Design Pattern:
+    - [Front Controller](https://www.oracle.com/technetwork/java/frontcontroller-135648.html)
+    - [MVC](https://docs.oracle.com/cd/E13174_01/alui/devdoc/docs60/Overview_of_the_Portal_Architecture/Portal_UI/PlumtreeDevDoc_Overview_MVCArchitecture.htm)
+    - [Buisness Delegate](https://www.oracle.com/technetwork/java/businessdelegate-137562.html)
+
+- [XML](https://www.w3.org/XML/)
+  - Valid vs. Well Formed
+  - Schema
+    - XSD
+    - DTD
+  - [JAX-P](https://docs.oracle.com/javase/tutorial/jaxp/index.html)
+    - DOM
+    - SAX
