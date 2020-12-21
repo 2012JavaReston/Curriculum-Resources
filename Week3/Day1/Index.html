@@ -1,0 +1,152 @@
+
+<!--
+
+    This is a comment in HTML
+
+    Hyper Text Markup Language
+
+    What is it? 
+        A skeleton for all webpages. All webpages are built on html documents
+-->
+
+<!-- <!DOCTYPE html> This is a psuedo tag telling the browser this is html -->
+
+<html> <!-- Root tag for html file-->
+
+    <head> <!-- contains all the meta data related to the webpage-->
+        <meta charset="UTF-8">
+        <title>Hello HTML!</title>
+
+        <style>
+
+            body{
+                background-color: seagreen;
+            }
+            p {
+                color: purple;
+                background-color: seagreen;
+            }
+            div {
+                background-color: red;
+            }
+            h3{
+                text-align: left;
+            }
+            h1{
+                text-align: right;
+            }
+            
+
+    </style>
+
+
+
+        <link rel="stylesheet" href="MyStyle.css">
+        <link rel="stylesheet" href="MyStyle2.css">
+
+        
+
+    </head>
+
+    <body> <!-- Contains all the infromation that will be rendered on the webpage-->
+        
+        <!-- Text -->
+        <h1 class = "otherTitles"> This is a Headline tag!</h1> <!-- header tag h1-> h6 -->
+        <!-- <br> This is a line break -->
+        <br>
+        <br>
+        <h3 id = "FavoriteTitle"> Goldilocks region!</h3> 
+        <div class = "titlediv">
+            <h6 class = "otherTitles"> This is the smallest header!</h6>
+        </div>
+        
+
+        
+        <p style = "color: blueviolet;">This is inside a paragraph tag!</p> <!-- This is a paragrpah tag-->
+
+        <!-- Images -->
+        <img src = "https://images-na.ssl-images-amazon.com/images/I/81D%2BXXEnHBL._SY445_.jpg"
+                alt = " A really cool image is meant to be here!"> <!-- What is an attribute? 
+                                Attribute modify the behaviour of the tag.-->
+
+        <!-- Can be used to show videos-->
+        <iframe src = "https://images-na.ssl-images-amazon.com/images/I/81D%2BXXEnHBL._SY445_.jpg"
+            height = "400" width = "400">
+        </iframe>
+
+        <!-- Links -->
+        <a href = "https://www.google.com/search?q=kittens">I need actual text</a>
+
+        <!--List -->
+
+        <ol> <!-- Ordered list -->
+                <li>Item 1</li>
+                <li></li>
+                <li>Item 2</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>Item 3</li>
+        </ol>
+
+        <ul> <!-- Unordered list-->
+            <li>Item 1</li>
+            <li></li>
+            <li>Item 2</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>Item 3</li>
+        </ul>
+
+        <!-- Table -->
+
+        <table border="8">
+            <tr> <!-- Defines a table row -->
+                <th> Left </th> <!-- th defines a head cell, which equates to a column -->
+                <th> Right </th>
+            </tr>
+            <tr>
+                <td> Number 1</td> <!-- td defines a body cell, which equates to a column-->
+                <td> Number 2</td>
+                <td> Number 3</td>
+            </tr>
+        </table>
+
+        <!-- Forms -->
+        <!-- <br>
+         -->
+
+         <div style="color: aqua;"> <!-- Allows me to define a block element-->
+                <p style="color: crimson;"> This is my <span style="color: blue;">form</span> div</p>
+                <p class = "otherTitles" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id cursus elit. Mauris auctor, nulla quis molestie aliquam, risus dolor pretium nisi, sed vestibulum dolor magna a risus. Nunc ac lacus id est ornare egestas. Sed sit amet gravida elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur non iaculis erat. Sed mauris lectus, lobortis vel leo venenatis, accumsan efficitur nisl. Curabitur pulvinar placerat purus ac tristique. Maecenas semper malesuada urna, quis finibus eros commodo eget. Cras quis aliquam ex.</p>
+        <form action = "https://www.google.com/search?" method="GET"> <!--Action: specifies the endpoint to send the form data. 
+                                            Method: HTTP method 
+            -->
+            <input type="text" placeholder="This is a placeholder!" name = "q">
+            <input type="text" name = "c">
+            <input type="text" name = "b">
+            <input type="submit" value = "This is my submit button!">
+        </form>
+
+
+        <!-- 
+            CSS: Cascading style sheets
+            Multiple ways to style our webpage, each being progressively better. 
+
+            inline styling:
+                    We define the style of an element at the tag level. 
+                    We have to define every single tag, which generates a lot more code 
+                        and does not offer any kind of reusability. 
+
+            internal stylesheet 
+                    We define a style inside of our head tag (Defining meta data)
+
+            external stylesheet 
+                    We define a style sheet outside of the html page. 
+         -->
+
+    </div>
+    </body>
+
+</html>

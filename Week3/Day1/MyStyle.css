@@ -1,0 +1,40 @@
+/*
+    This is a comment in css
+*/
+
+/*
+CSS structure:
+
+    selector {
+        property-1: value-1;
+        property-2: value-2;
+*/
+
+/* So far we've been targeting elements/tags*/
+body{
+    background-color: blue;
+}
+h1{
+    size: 5cm;
+}
+
+
+
+/*IF we want to get more specific, we want classes and id*/
+/* Ids are singular, so only one element at a time should have it. */
+#FavoriteTitle {
+    background-color: aliceblue;
+}
+
+.otherTitles{
+    background-color: chartreuse;
+}
+
+/* This will target classes of otherTitle that are p tags */
+p.otherTitles { 
+    background-color: chocolate;
+}
+
+div.titlediv > .otherTitles {
+    background-color: darkblue;
+}
