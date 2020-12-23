@@ -31,6 +31,7 @@ undefined
 null 
 symbol (unique and immutable primitive values, can be used as the key for an object)
         - ES6 (Version 6), ECMAScript 2015 
+bigint - ES10
 
 object 
 array 
