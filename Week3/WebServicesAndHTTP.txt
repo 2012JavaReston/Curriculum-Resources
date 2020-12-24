@@ -1,0 +1,58 @@
+Service?
+	A functionaility of a software or application being offered over
+	a netword.  
+
+Web Service? 
+	A service that is offered over the web. Can include any type of
+	software, applicaiton or cloud technologies. 
+	We will be levaragin HTTP. 	
+
+	Why not send over service via a jar file?
+		Platform dependence:
+			What to do if I have c#?
+			What to do, if I have postgressql!
+		Update anomalies? 
+			They'll have to fin dthe new version or 
+			be stuck with the outdated version. 
+		Requiring DB access
+			Nobody wants to send their DB credentials.
+
+	Essential asepcts of web services 
+		Available over the internet (or intranet networks)
+		Supports client-server communication. (HTTP) 
+		Platform independent 
+		Self-describing. 
+		Discovarable
+
+
+	2 Common types of Web Services:
+		REST - REpresentational State Transfer
+		SOAP - Simple Object Access Protocol 
+
+	
+REST heavily levarages HTTP.
+
+	HTTP: Hyper Text Transfer Protocol 
+
+	> Stateless protocol - the server does not keep track of your
+		previous requests. 
+	
+	HTTP Request:
+		URI - defines the endpoint for where the request will go. 
+		Verb - Tells the server what the nature of the request is. 
+		Header- Also contains meta data!
+		Body - The actual content of the message. It's format is in
+			text/string (JSON or XML). 
+
+	HTTP Response 
+		
+		Status code - tells us how the request was handled (3 digits)
+		Header - Contains meta data for the repsonse
+		Body - Contians message body.
+
+
+
+
+
+
+
