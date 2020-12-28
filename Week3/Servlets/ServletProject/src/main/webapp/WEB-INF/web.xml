@@ -5,6 +5,14 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
+  <!-- 
+  		Java web applications uses a deployment descriptor to map URL to Java classes. 
+  		
+  		The file resides within the webapp/WEB-INF/
+  		
+  		Like our previous configuration files, use eXtensible markup language. 
+   -->
+  
   <servlet>
   		<servlet-name>FirstServlet</servlet-name>
   		<servlet-class>com.revature.servlets.HelloServlet</servlet-class>
@@ -15,5 +23,13 @@
   		<url-pattern>/another/hello</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  		<servlet-name>SecondServlet</servlet-name>
+  		<servlet-class>com.revature.servlets.LifeCycleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>SecondServlet</servlet-name>
+  		<url-pattern>/life</url-pattern>
+  </servlet-mapping>
   
 </web-app>
