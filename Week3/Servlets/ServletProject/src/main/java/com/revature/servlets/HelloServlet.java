@@ -11,6 +11,8 @@ import com.revature.models.Planet;
 
 public class HelloServlet extends HttpServlet{
 	
+	private static Planet p1 = new Planet();
+	
 	public static void create() {
 		Planet p = new Planet();
 	}
@@ -59,6 +61,18 @@ public class HelloServlet extends HttpServlet{
 		
 		//inside of here is where you're creation methods work 
 		System.out.println("Inside of our post method!");
+	}
+	
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException{
+		create();
+	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException{
+		p1.setId(p1.getId()+1); //not idempotent, but that's cause we've configured incorrectly on the server!
 	}
 
 }
