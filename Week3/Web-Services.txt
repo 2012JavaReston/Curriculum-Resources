@@ -1,0 +1,106 @@
+Web service?
+
+	Basically, a service that is offered over the web. Can include any type of software, application or cloud technologies. Utilises web protocol (HTTP)
+	using data formats (JSON, xml, etx..).
+
+	Why not send over service via a jar file?
+		Platform dependence:
+			Waht do fo, if I have c#?
+			What to do, if i hvave Postgressql?
+		Update anomalies?
+			I'll have to find the new version or I'll be stuck with the oudated version. 
+		Service the data will require DB access
+			Nobody want to send their DB credentials..
+
+	Essential Aspects of a web service?
+		Available over the internet (or intranet networks)
+		Support client-serve communication 
+		Platform independent
+		Self-describing 
+		Discoverable 
+
+	2 Common types of Web Services:
+		REST - REpresentational State Transfer
+		SOAP - Simple Object Access Protocol 
+
+	SOA (Service Oriented Architecture):
+		Technique for building applications using loosely coupled services. 
+
+	Benefits of SOA:
+		Modular Business Services
+		Code Reuse 
+		Scalability 
+		Language Independent 
+
+
+	HTTP: Hyper Text Transfer Protocol 
+		1)Stateless protocol 
+		2)Application layer protocol (sitting on top of the transport layer, TCP most of the time)
+		3)
+			HTTP request 
+				Request Line:
+					URI - Uniform Resource Identifier 
+					Method
+					HTTP version number - shows which HTTP spec to which the client has tried to comply to 
+				Header:
+					Allows you to send additional information with your request or response. Accept-Language: eng, fr,
+					Authentication, Caching. 
+				Body:
+					Message body, the entity is the actual content of the message. It's in text and can take any data format. 
+
+			HTTP Response:
+				Status Line:
+					Status code: 3 digit number notifying us about the result of our request 
+					HTTP version number
+					Reason phrase - (status text) human readable text that summarises the meaning of the status code
+				Http Headers:
+					Same as Http request 
+				Http Body:
+					Same as Http request
+Methods:
+	GET: Retrieve a resource
+	POST: Create a resource 
+	PUT: Updating an existing resource (replaces the entire object with a new object)
+	DELETE: Delete an existing resource
+	PATCH: Is a partial update (overwrite ONLY the field it needs to )
+	OPTIONS - returns available functionalities (operations the server can take)
+	HEAD - similar to a GET, except it does not return a body 
+	TRACE...
+	CONNECT...
+
+	Safe method?
+		Does not change the state of your application 
+
+	Idempotent method?
+		An idempotent method will have the same outcome, regardless of how many times it is performed
+
+			Safe			Idempotent
+	GET		yes			yes
+	POST		no			no
+	PUT		no			yes
+	DELETE 		no			yes
+	PATCH		no			no
+	OPTION		yes			yes
+	HEAD		yes			yes
+
+
+REST: Representational State Transfer
+	An architectural style protocol 
+		What kind of information can you send over?
+			XML, JSON, anything HTTP can handle. 
+		Transfer protocol?
+			Is only HTTP/HTTPS.
+		Contract bound?
+			It is not contract bound. 
+
+		RESTful conditions/constraints:
+			1) Stateless - does not retain/store any ata about the latest HTTP requests
+			2) Uniform Interface - Each entity's API should follow the same pattern, no operation should have more that 1 URL. 
+			3) Client-Server - they are seperate entities 
+			4) Layer System - client cannot tell whether it is connected to the original server or another server.
+			5) Cacheable - resource must delcare themselves as cacheable 
+			6) (Optional) Code on demand: Able to send executable code to the original server or another server. 
+
+		https://restfulapi.net/
+
+		If you don't meet all the conditions, then it's a REST based service. all the conditions, then you're application is "REST-based"
