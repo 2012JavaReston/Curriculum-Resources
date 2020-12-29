@@ -3,10 +3,13 @@ package com.revature.service;
 import com.revature.dao.PlanetDao;
 import com.revature.dao.PlanetDaoImpHardCoded;
 import com.revature.models.Planet;
+import com.revature.models.User;
 
 public class PlanetFun {
 	
 	PlanetDao pDao = new PlanetDaoImpHardCoded();
+	
+	public static User masterUser = new User("Bobby");
 	
 	public void destroy(Planet p) {
 		System.out.println("You're planet is about to be destroyed, by a asteroid");

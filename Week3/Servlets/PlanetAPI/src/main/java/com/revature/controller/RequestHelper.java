@@ -41,8 +41,17 @@ public class RequestHelper {
 						break;
 				}
 				break;
-			case "/PlanetAPI/api/":
+			case "/PlanetAPI/api/home":
 				HomeController.getHomePage(req, resp);
+				break;
+			case "/PlanetAPI/api/landing":
+				LoginController.getLandingPage(req,resp);
+				break;
+			case "/PlanetAPI/api/login":
+				LoginController.login(req,resp);
+				break;
+			case "/PlanetAPI/api/logout":
+				LoginController.logout(req, resp);
 				break;
 //			default:
 //				HomeController.resetToHome(req, resp);
