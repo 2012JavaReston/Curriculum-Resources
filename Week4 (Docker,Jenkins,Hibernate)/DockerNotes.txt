@@ -1,0 +1,97 @@
+Before VM:
+	Have all our apps running on a single server machine. Difficult to manage 
+	how much resources a single app might take, causing other apps to underperform. 
+	Can resolve it by putting each application on a seperate system, can be expensive
+	and difficult to scale. 
+
+Virtual Machine:
+	>VM's virtualize at the hardware level, emulates a phyical machine and can 
+	be treated as such. On a single system, you can have multiple isolated 
+	VMs running. 
+	>Vms are isolated, so if a VM failes, other VM should not be affected. 
+	>VMs are effectively isolated systems that we can play with (deploy and testing). 
+	>Each VM comes with it's own OS, libraries and applications. (VMs are managed 
+		using Hypervisors). 
+
+Containers: 
+	VMs can be viewed as hardware virtualization, containers are OS virtualixation. 
+		Each container will share the same OS kernel as its host. 
+		By it's very nature, containers aren't as isolated as VM. 
+
+	> Much smaller in size than VMs, megabytes compared to gigabytes. 
+		Allows much quicker boot up time. 
+	> Much more portable than VMs because they share the same OS (seperate OS systems
+		can cause overhead in memory). 
+	> There is less management overhead due to the container sharing the same OS
+
+
+Docker: 
+	Docker	file:
+		Includes the necessary information to configure and build a docker imgae. 
+
+	Docker image:
+		A template for how to run a container. There are pre-made docker images on 
+		docker hub for easy start up. e.g. 8-jdk-alpine. 
+
+	Docker container:
+		Where the docker image will be actually running. 
+
+	Dockerfile -> Docker image -> Docker contianer 
+
+	Docker compose:
+		Is a tool for defining and running applications with multiple docker 
+		containers. Uses a YAML file to foncigure application services. 
+
+	Docker registry 
+		Stores and distributes docker images, stateless and scalable. 
+
+
+	Benefits of Docker:
+	1) Reproducibility/Distribution: All images built form the same Dockerfile will behavie identically.
+			Easy to distribute within your organisations.  
+	2) Isolation: Seperate containers which will avoid dependencies or plugins from conflicting with each other
+	3) Security: If one contianer is comprised, the other containers will remain unaffected. 
+	4) DockerHub: Contains a lot of premade images, which makes life easier
+	5) Environment Management: Isolated containers allow you to do testing, development and production on the same environment. 
+	6) Continous Integration: Designed to work well as part of continous integration pipelines with Jenkins. 
+
+	Disadvantages: 
+	1) Increased overhead: communication and managing multiple containers ain't easy, better have a sysadmin
+	1) Decreased performance: processes will run quicker on native OS compared to within containers. 
+	3) Multiple operating systems: Docker container share the same OS, where as VMs can use seperate OS systems. 
+	4) Security: VMs offer better security, the OS is still shared. 
+
+
+	Creating a Docker Image and running the container.
+
+	1) Create a Maven/Spring project 
+		>Any project that can be made into a jar file will suffice. The demo will be using a Spring Boot project. 
+	2) Maven build the project, use "clean compile install", A JAR file should be now created under your 'target' folder
+		
+	Inside Project, create a file "Dockerfile" in the root folder 
+		Inside the file insert:
+				FROM openjdk:8-jdk-alpine
+				VOLUME /tmp
+				ADD target/demo-0.0.1-SNAPSHOT.jar demo.jar
+				ENTRYPOINT ["java","-jar", "/demo.jar"]
+	
+	https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index
+	FROM: We're using an image built around JDK 8 
+	VOLUME: Before a device can utilise a storage device, the OS has to make it accessible through the device's file system. VOLUME mounts 
+		a directory inside of our container, can also be used to mount host directory inside the container. Enabling file sharing. 
+		https://blog.container-solutions.com/understanding-volumes-docker
+	ADD: Copies new files from directory, in this case our jar application. We map our jar file to "app.jar"
+	ENTRYPOINT: Gives docker the commandline arguments necessary for the applciation (java -jar -<jar file name>)
+
+Command Line:
+		1) docker -v : checks whether Docker is installed and what version it is. 
+		2) Switch to project space using: cd <project-space> || Alternatively use docker build -f /path/Dockerfile
+		2) docker build -t <tagname> : Creates a docker image, with -t used to give the image a name
+		3) docker run -p<host port>:<docker port> <image name> : Run docker image in a container, using -p to specify mapping 
+			from host port to docker port
+		4) docker container stop <container name> : Stops container running 
+		5) docker container start <container name> : Starts Docker container
+
+		Extra) 	Docker ps : Returns all the dockers running
+		        Docker ps -a: Returns all docker containers runnning or not running
+			Docker image ls : Returns all docker images (the ones created by 2) 
