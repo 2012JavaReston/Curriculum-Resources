@@ -16,9 +16,20 @@ public class PlanetController {
 	 * The controller will connect the servlet to our Java logic 
 	 *  The servlet will handle recevining the request and sedning the response. 
 	 *  The request displatcher wioll actually handle the routing of the request
+	 *  
+	 *  The servlet is the door, if it doesn't get handled by the servlet then none of our Java logic executes. 
+	 *  
+	 *  The request dispatcher will then decide which logic to execute, we can do this by any property of the request object. 
+	 *  	But it makes sense to route the requests based on the endpoints and methods. 
+	 *  
+	 *  The controller is what actually process the request object (i.e. extract data from the request object, execute java logic from 
+	 *  	our service layer and modify the response object)
 	 */
 	
 	private static PlanetFun pService = new PlanetFun();
+	
+	//I've called my read and create methods; getPlanet and postPlanet. I did this to maintain consistency.
+	//I could have called them whatever, as long as the requesthelper invokes the right methods in its switch block.
 	
 	public static void getPlanet(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException{

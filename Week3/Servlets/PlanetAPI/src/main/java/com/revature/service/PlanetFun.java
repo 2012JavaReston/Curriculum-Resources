@@ -7,6 +7,16 @@ import com.revature.models.User;
 
 public class PlanetFun {
 	
+	/*
+	 * This is a service level class regarding our Planet objects. 
+	 * 
+	 * All the logic here is exclusively Java, we don't deal with any Http requests and response, and we don't deal with 
+	 * 		sql or database related entities/methods. 
+	 * 
+	 * You might have a service level authentication class as well... 
+	 * 		instead of defining a master user like I have, inside of our planet service class.
+	 */
+	
 	PlanetDao pDao = new PlanetDaoImpHardCoded();
 	
 	public static User masterUser = new User("Bobby");

@@ -12,6 +12,14 @@ public class PlanetDaoImpHardCoded implements PlanetDao {
 	//Rather than connect to a database, we will just have a collection entity 
 	
 	private static Set<Planet> planetSet = new HashSet<>();
+	
+	//Adding some default methods
+	static {
+		planetSet.add(new Planet(0, "Sun", "look up"));
+		planetSet.add(new Planet(1, "Mercury", "look up with a telescope"));
+		planetSet.add(new Planet(2, "Venus", "look up on a very dark night"));
+		planetSet.add(new Planet(3, "Earth", "look down"));
+	}
 
 	@Override
 	public boolean insertPlanet(Planet p) {
