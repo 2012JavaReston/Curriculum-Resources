@@ -1,0 +1,86 @@
+SDLC - Software development lifecycle 
+
+	Requirements:
+		> Product owners will ask for anything. 
+		> Business analysts step in to translate that into code requiremtns. 
+
+	Analysis:
+		> Technical dive into project specifrication. 
+	
+	Design:
+		> Propose/plan the implementation of the code. 
+
+	Development:
+		> Actually coding. 
+	
+	Testing:
+		> We test our code to make sure it's achieving intended functionality
+
+	Deployment and Mainenance phase:
+		> End user has access to the system's functionality. 
+
+
+Waterfall methodology. 
+
+	It takes a very linear approach to the SDLC.
+	All of the project requirements are defined, all of the development is done, 
+		all of the testing is done on it in one go and the entire project is
+		deployed in one go. 
+
+	pros:
+		very easy to implement (intuitive)
+	
+	cons: 
+		very inefficent due to lack of continous feedback. 
+		bad for large teams.
+		testing does not start until the development phase is complete
+
+
+Agile methodology (scrum framework)
+	
+	We work in sprints - time span is 2 weeks. 
+	Break down the project into bitesized chucnks that can be handled over a smaller timespan. 
+	Daily standups. 
+
+	pros:
+		Regular feedback 
+		Encourages collabaration. 
+
+	cons:
+		difficult to set up. 
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+DevOps:
+
+	Development Operations with Agile:
+		(CICD pipeline- Continous integration and Continous delivery/deployment)
+		> Contionus integration
+		> Continous delivery
+		> Continous depoyment
+		
+
+Nightly builds:
+
+	Developers would complete some code 
+	At the end of the day they would merge all of the code. 
+	They would build the project at the end of the day
+	Then They would come back the day after and see what happened. 
+
+
+Continous integration:
+	Developer would complete some code, push the changes to the main branch. 
+	This code will be automatically built, tested and the developer 
+		would get feedback straightaway. 
+
+
+Continous Delivery:
+	The project is built and active in a internal environment 
+
+Continous Deployment:
+	The project is build and active in a deployment environment 
+
+	
+
+	
+
