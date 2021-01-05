@@ -12,6 +12,8 @@ import com.revature.service.PlanetFun;
 
 public class LoginController {
 	
+	private static String baseUrl = "http://ec2-3-138-246-106.us-east-2.compute.amazonaws.com:8085/";
+	
 	/*
 	 * What is the purpose of our login method? 
 	 * 
@@ -47,19 +49,22 @@ public class LoginController {
 					//we will redirect to the homecontroller if they hav access!. 
 					//Our home controller will give them acess to the home page if they have access. 
 					//But what if they don't have access? Check the home controller to see what it does. 
-					resp.sendRedirect("http://localhost:8080/PlanetAPI/api/home");
+//					resp.sendRedirect("http://localhost:8080/PlanetAPI/api/home");
+					resp.sendRedirect(baseUrl + "PlanetAPI/api/home" );
 			}else {
 				
 				//invalid credentials
 				resp.setStatus(403);
-				resp.sendRedirect("http://localhost:8080/PlanetAPI/api/home");
+//				resp.sendRedirect("http://localhost:8080/PlanetAPI/api/home");
+				resp.sendRedirect(baseUrl + "PlanetAPI/api/home" );
 			}
 			
 		}else {
 			
 			//invalide method
 			resp.setStatus(405);
-			resp.sendRedirect("http://localhost:8080/PlanetAPI/api/home");
+//			resp.sendRedirect("http://localhost:8080/PlanetAPI/api/home");
+			resp.sendRedirect(baseUrl + "PlanetAPI/api/home" );
 		}
 		
 	}
@@ -67,7 +72,8 @@ public class LoginController {
 	public static void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		//Our logout method invalidates the session and redirects back to the home controller
 		req.getSession().invalidate();
-		resp.sendRedirect("http://localhost:8080/PlanetAPI/api/landing");
+//		resp.sendRedirect("http://localhost:8080/PlanetAPI/api/landing");
+		resp.sendRedirect(baseUrl + "PlanetAPI/api/landing" );
 	}
 	
 	public static void getLandingPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

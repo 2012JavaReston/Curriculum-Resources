@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HomeController {
 	
+	private static String baseUrl = "http://ec2-3-138-246-106.us-east-2.compute.amazonaws.com:8085/";
+	
 	//What does our Home controller do? 
 	// It's sole responsibility is to handle when to give us our home page. 
 	// There is only way to get the home page:
@@ -25,7 +27,8 @@ public class HomeController {
 			redis.forward(req, resp);
 //			resp.sendRedirect("http://localhost:8080/PlanetAPI/index.html");
 		}else {
-			resp.sendRedirect("http://localhost:8080/PlanetAPI/api/landing");
+//			resp.sendRedirect("http://localhost:8080/PlanetAPI/api/landing");
+			resp.sendRedirect(baseUrl + "PlanetAPI/api/landing" );
 		}
 //		resp.setStatus(403);
 		
