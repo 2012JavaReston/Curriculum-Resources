@@ -17,6 +17,7 @@ public interface PlanetDao {
 	//READ
 	public Planet selectPlanetById(int id);
 	public List<Planet> selectAll();
+	public List<Planet> selectPlanetByName(String name);
 	public List<Planet> selectAllPlanetsWithBlueInTheDescription();
 	
 	//DELETE

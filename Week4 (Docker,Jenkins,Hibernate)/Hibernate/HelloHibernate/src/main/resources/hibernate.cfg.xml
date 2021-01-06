@@ -35,8 +35,8 @@
 	 		<property name = "hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 	 		<!-- Additional Hibernate Options -->
 	 		
-	 		<property name = "hibernate.show_sql">true</property> <!-- Show the sql scripts being executed -->
-	 		<property name="hibernate.format_sql">true</property> <!-- makes it more human readable -->
+	 		<property name = "hibernate.show_sql">false</property> <!-- Show the sql scripts being executed -->
+	 		<property name="hibernate.format_sql">false</property> <!-- makes it more human readable -->
 	 		
 	 		<!--  Connection Pool 
 	 			A method of speeding up database calls. 
@@ -57,7 +57,7 @@
 	 		 		NONE: nothing
 	 		 		
 	 		 -->
-	 		 <property name="hibernate.hbm2ddl.auto">create</property>
+	 		 <property name="hibernate.hbm2ddl.auto">validate</property>
 	 		 
 	 		 <mapping class = "com.revature.models.Planet"/>
 	 	</session-factory>
