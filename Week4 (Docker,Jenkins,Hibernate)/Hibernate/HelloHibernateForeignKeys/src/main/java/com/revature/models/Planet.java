@@ -26,7 +26,7 @@ public class Planet {
 	@Column(name="planet_name", unique=true, nullable = false)
 	private String name;
 	
-	@OneToMany(mappedBy = "myPlanet", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "myPlanet", fetch = FetchType.LAZY)
 	private List<Moon> moons = new ArrayList<>();
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

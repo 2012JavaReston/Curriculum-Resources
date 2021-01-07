@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
@@ -22,18 +22,17 @@
 	 <hibernate-configuration>
 	 	<session-factory>
 	 		<!-- JDBC stuff -->
-	 		<property name = "hibernate.connection.username">postgres</property>
+	 		<property name = "hibernate.connection.username">admin</property>
 	 		<property name = "hibernate.connection.password">p4ssw0rd</property>
-	 		<property name = "hibernate.connection.url">jdbc:postgresql://database-1.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres</property>
+	 		<!--  <property name = "hibernate.connection.url">jdbc:postgresql://database-1.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres</property>
 	 		
 	 		<property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
 	 		<property name = "hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+	 		-->
 	 		
-	 		<!--  
 	 		<property name="hibernate.connection.url">jdbc:mysql://database-2.cqoseij0k35s.us-east-2.rds.amazonaws.com:3306/Planets</property>
 	 		<property name = "hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 	 		<property name = "hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
-	 		-->
 	 		<!-- Additional Hibernate Options -->
 	 		
 	 		<property name = "hibernate.show_sql">false</property> <!-- Show the sql scripts being executed -->
@@ -58,9 +57,14 @@
 	 		 		NONE: nothing
 	 		 		
 	 		 -->
-	 		 <property name="hibernate.hbm2ddl.auto">create</property>
+	 		 <property name="hibernate.hbm2ddl.auto">validate</property>
 	 		 
+	 		 <!--  This is used with annotation based configuration
 	 		 <mapping class = "com.revature.models.Planet"/>
+	 		 -->
+	 		 
+	 		 <mapping resource="Planet.hbm.xml"/>
+	 		 
 	 	</session-factory>
 	 </hibernate-configuration>
 	 

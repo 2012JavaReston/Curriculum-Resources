@@ -20,7 +20,7 @@ public class PlanetDaoHibernate implements PlanetDao {
 		Session ses = HibernateUtil.getSession();
 		Transaction tx = ses.beginTransaction();
 		
-		ses.save(p);
+		ses.save(p); //persist()
 		
 		tx.commit();
 		ses.close();
@@ -43,7 +43,7 @@ public class PlanetDaoHibernate implements PlanetDao {
 	public Planet selectPlanetById(int id) {
 		Session ses = HibernateUtil.getSession();
 		
-		Planet p = ses.get(Planet.class, id);
+		Planet p = ses.get(Planet.class, id); //load()
 		
 		ses.close();
 		return p;
@@ -78,7 +78,7 @@ public class PlanetDaoHibernate implements PlanetDao {
 		//parse the string from HQL and convert it into our preferred sql syntax. 
 		
 		//Criteria API (deprecated but Criteria builder is way too many lines)
-		planetList = ses.createCriteria(Planet.class).add(Restrictions.ilike("description", name)).list();
+		planetList = ses.createCriteria(Planet.class).add(Restrictions.ilike("name", name)).list();
 		
 		return planetList;
 	}

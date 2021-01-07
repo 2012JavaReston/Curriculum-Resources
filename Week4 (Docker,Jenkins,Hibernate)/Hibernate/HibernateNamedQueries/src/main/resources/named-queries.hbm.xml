@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+        	<!--  Named queries allow us to define our queries in one location ,
+        			allows for easier management for 'pre-made' quries -->
+        			
+        <hibernate-mapping>
+        	<query name="HQL_GET_ALL">from Planet</query>
+        	
+        	<query name = "HQL_GET_PLANET_BY_NAME">
+        	<!--  We use CDATA to decalre hql queries, because xml get's annoyed at < and >. -->
+        		<![CDATA[from Planet where name = 'Venus']]>
+        		
+        	</query>
+        	
+        	<sql-query name="SQL_GET_ALL_PLANETS">
+        		<![CDATA[select * from planet_table]]>
+        		<return alias = "planet" class = "com.revature.models.Planet"></return>
+        	</sql-query>
+        
+        </hibernate-mapping>

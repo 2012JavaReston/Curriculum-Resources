@@ -1,0 +1,63 @@
+What we covered ove Hibernate:
+
+	An ORM framework 
+		How hibernate translates java objects into sql.
+
+	Important Hibernate interfaces and classes:
+		Transaction
+		Session
+		SessionFactory 
+		Configuration
+		Query interface
+
+	Explain the hibernate.cfg.xml
+		the properties we need to define
+			jdbc stuff
+			connection pool 
+			show_sql 
+			format_sql 
+			mapping (classes and resources)
+
+	
+	Hibernate
+		Explain the process of sending a basic query. 
+			get vs load
+			save vs persist 
+			update 
+			delete (CRUD methods)
+
+		Explain how to do more complex quiries
+			Criteria API/ Criteria Builder
+			Native SQL 
+			HQL 
+
+	NameQueries 
+
+	Different configurations styles:
+		Annotations
+		xml
+		Java 
+
+	Explain the types of anotations:
+		entity
+		table
+		column 
+		id
+		etc. 
+
+		Hibernate vs JPA? 
+
+//////////////////////////////////////////////////////////////////////////////////
+
+	ACID properties 
+	Caching :
+		is JDBC or Hibernate better performance? 
+		L1 vs L2 caching 
+	Service Locator Design Pattern 
+	Review of XML 
+	States of an Hibernate object. 
+
+	(I forgot to mention but the object-relational mapping on revpro is also excellent).
+
+
+
