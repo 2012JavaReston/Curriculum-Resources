@@ -9,13 +9,9 @@ import org.hibernate.criterion.Restrictions;
 import com.revature.models.Planet;
 import com.revature.util.HibernateUtil;
 
-public class PlanetDaoHibernate implements PlanetDao {
+public class PlanetDao {
 	
-	/*
-	 * Hibernate provides us with some default CRUD methods 
-	 */
-
-	@Override
+	
 	public void insert(Planet p) {
 		Session ses = HibernateUtil.getSession();
 		Transaction tx = ses.beginTransaction();
@@ -23,11 +19,11 @@ public class PlanetDaoHibernate implements PlanetDao {
 		ses.save(p);
 		
 		tx.commit();
-		ses.close();
+//		ses.close();
 
 	}
 
-	@Override
+	
 	public void update(Planet p) {
 		Session ses = HibernateUtil.getSession();
 		Transaction tx = ses.beginTransaction();
@@ -35,33 +31,34 @@ public class PlanetDaoHibernate implements PlanetDao {
 		ses.update(p);
 		
 		tx.commit();
-		ses.close();
+//		ses.close();
 
 	}
 
-	@Override
+	
 	public Planet selectPlanetById(int id) {
 		Session ses = HibernateUtil.getSession();
 		
 		Planet p = ses.get(Planet.class, id);
+//		System.out.println(p.getMoons());
 		
-		ses.close();
+//		ses.close();
 		return p;
 	}
 
-	@Override
+	
 	public List<Planet> selectAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+
 	public List<Planet> selectAllPlanetsWithBlueInTheDescription() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	@Override 
+
 	public List<Planet> selectPlanetByName(String name){
 		
 		Session ses = HibernateUtil.getSession();
@@ -78,12 +75,12 @@ public class PlanetDaoHibernate implements PlanetDao {
 		//parse the string from HQL and convert it into our preferred sql syntax. 
 		
 		//Criteria API (deprecated but Criteria builder is way too many lines)
-		planetList = ses.createCriteria(Planet.class).add(Restrictions.ilike("description", name)).list();
+		planetList = ses.createCriteria(Planet.class).add(Restrictions.ilike("name", name)).list();
 		
 		return planetList;
 	}
 
-	@Override
+	
 	public void delete(Planet p) {
 		Session ses = HibernateUtil.getSession();
 		Transaction tx = ses.beginTransaction();
@@ -91,7 +88,7 @@ public class PlanetDaoHibernate implements PlanetDao {
 		ses.delete(p);
 		
 		tx.commit();
-		ses.close();
+//		ses.close();
 
 	}
 
