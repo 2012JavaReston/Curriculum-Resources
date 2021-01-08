@@ -19,7 +19,7 @@ public class PlanetFun {
 	
 	PlanetDao pDao = new PlanetDaoImpHardCoded();
 	
-	public static User masterUser = new User("Bobby");
+	public static final User masterUser = new User("Bobby");
 	
 	public void destroy(Planet p) {
 		System.out.println("You're planet is about to be destroyed, by a asteroid");

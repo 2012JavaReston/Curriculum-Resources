@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RequestHelper {
 	
+	private static String baseUrl = "http://ec2-3-138-246-106.us-east-2.compute.amazonaws.com:8085/";
+	
 	
 	public static void process(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
@@ -83,7 +85,7 @@ public class RequestHelper {
 				This hasn't happened before, but what this case does is hijack that request 
 				and give it the actual resource. 
 				*/
-				resp.sendRedirect("http://localhost:8080/PlanetAPI/ajax.js");
+				resp.sendRedirect(baseUrl + "PlanetAPI/ajax.js");
 				break;
 			default:
 				HomeController.resetToHome(req, resp);

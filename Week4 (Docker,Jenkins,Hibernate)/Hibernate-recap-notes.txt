@@ -50,6 +50,8 @@ What we covered ove Hibernate:
 //////////////////////////////////////////////////////////////////////////////////
 
 	ACID properties 
+		Concurrency issues 
+		Isoltation levels 
 	Caching :
 		is JDBC or Hibernate better performance? 
 		L1 vs L2 caching 
