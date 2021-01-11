@@ -131,3 +131,121 @@ let earth: Planet = {
     orbit: () => console.log("I'm orbiting!")
 };
 
+class Star implements Moon{
+
+    /**
+     * Accessmodifiers in Typescript:
+     *      private, public, protected. 
+     */
+    public name: string; //this is accessible anywhere 
+    nickname: string; //defaults public 
+    protected size: number; //accessible internally or to any class that extends it
+    private planets: number; //accessible only internally to our class 
+
+    constructor(name: string, nickname: string, size: number, planets: number){
+        this.name = name;
+        this.nickname = nickname;
+        this.size = size;
+        this.planets = planets;
+    }
+
+    fusion(): void {
+        console.log(`${this.name} getting brighter!`);
+    }
+}
+
+let Sun: Star = new Star("The Sun", "Bright thingy", 1,8);
+
+console.log(Sun.name);
+console.log(Sun.nickname);
+console.log(Sun.fusion);
+
+
+class NeutronStar extends Star{
+
+    hasExploded: boolean;
+
+    constructor(name: string, nickname: string, size: number, planets: number){
+        // super();
+        super(name,nickname,size,planets);
+        this.hasExploded = false;
+    }
+
+    fusion(): void {
+        super.fusion(); //invoking our parent's functionality 
+
+        this.hasExploded = true;
+        console.log("explosions in space!");
+    }
+
+    spinabout(): void {
+        console.log("spinning a lot");
+    }
+
+}
+
+let pulsar: NeutronStar = new NeutronStar("Generic Neutron star", "very spinny",3,0); //If we don't define a constructor we get give a parent constructor.
+
+pulsar.fusion();
+
+
+interface A{};
+interface B{};
+
+class Animal implements A,B{
+
+    /**
+     * private name: string;
+     * 
+     * constructor(name){
+     *  this.name=name;
+     * }
+     * 
+     * old boring way
+     * //////////////////////////////
+     * 
+     * The following 2 lines of code have the same effect as the above code. 
+     * 
+     * constructor(private name:string){
+     * }
+     * 
+     */
+    
+
+    //Overloading in Typescript
+    //TS does not allow multiple constructores, instead we get optinal parameters. 
+    //optional parameters, we don't need to add them to our arguments 
+    // optional parameters HAVE to be on the RIGHT of the non-optional parameters. 
+    constructor( private breed?: string, private age?: number, public name?: string){
+
+        //Why do we add access modifiers? 
+        //By adding access modifers to our parameters, we are defining the level of access 
+        // and associating it as a property of the object. 
+
+    }
+
+    get Breed(): string{
+        console.log("I'm accessing a private variable, the breed through a getter method!")
+        return this.breed;
+    }
+
+    set Breed(breed: string){
+        this.breed=breed;
+    }
+
+    
+}
+
+// let animal: Animal = new Animal();
+// let animal2: Animal = new Animal(2);
+// let animal3: Animal = new Animal(2, "Bob");
+// let animal4: Animal = new Animal("Bob"); //you've got to go from left to right. 
+
+let puppy: Animal = new Animal("Golder Retriever", 8, "Bubby");
+
+console.log(puppy.Breed); //this is invoking the getter method 
+
+// puppy.Breed("German Shepard"); //this setter does not work 
+puppy.Breed = "German Shepard";
+
+console.log(puppy.Breed); //this is invoking the setter method.
