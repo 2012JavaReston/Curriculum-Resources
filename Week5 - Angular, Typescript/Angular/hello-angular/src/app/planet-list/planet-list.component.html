@@ -1,0 +1,86 @@
+<div class = 'panel panel-primary'>
+
+    <!--panel heading-->
+    <div class = 'panel-heading'>
+        <h1>Welcome {{currentUser}} {{2+3}}</h1>
+    </div>
+
+    <!--panel body-->
+    <!-- my goal is to make a dynamic table that will list all of my planets!-->
+    <div class = "panel-body">
+        <div class = "row">
+            <div class ='col-md-2'>Filter By: </div>
+            <div class = 'col-md-4'>
+
+                <input type = 'text' placeholder="filter">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class = 'table-responsive'>
+
+    <button class = 'btn btn-primary' (click) = 'toggleTable()'>
+        <!--Ternery expression " value? true : false"-->
+        {{showTable? 'Hide':'Show'}} Table
+    </button>
+    <!-- *ngIf will also parse through truthy or falsey values-->
+    <table class = 'table' *ngIf = 'planets && showTable'>
+        <thead>
+            <tr>
+                <th>
+                   <button class = 'btn btn-primary' (click) = 'toggleImage()'>
+                       {{showImage? 'Hide':'Show'}} Image
+                    </button>
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Livibility
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- An enhance for loop, but inside of html
+            
+                *ngFor will copy an entire lement (and all sub elements) for every element inside the
+                array you provide it. 
+
+                *ngFor is a 'STRUCTURAL DIRECTIVE'. structural directive will modify the DOM's structure either
+                by adding, removing or modifing elemnets to which they are attached to. 
+                Directives with an asteriks, *, are structural directives. 
+            -->
+
+            <tr *ngFor = 'let i of planets'>
+                <td >
+                    <!--Property binding, []-->
+                    <img *ngIf = 'showImage' [src] = 'i.image' [title] = 'i.name'
+                        [style.width.px] = 'imageWidth'
+                        [style.margin.px] = 'imageMargin'
+                    >
+                </td>
+                <td> 
+                    {{i.name}}
+                </td>
+                <td>
+                    {{i.livibility}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<!--
+    The {{}} syntax is used for interpolation. Interpolation evaluates an expression. 
+    You can do simple operations like addition or refer to variables from the TS file.
+    We USE interpolation to achieve one-way binding. 
+
+    One-way binding (w/interpolation) projects values in TS to the HTML page to be displayed. 
+    So any changes to the TS will immediately affect the HTML. But not the other way around!
+
+-->
