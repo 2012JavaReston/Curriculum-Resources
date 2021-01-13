@@ -6,6 +6,19 @@ Framework vs Library?
 	Your code will utilise library functionality to help it along. 
 	A FRAMEWORK will use YOUR code like a library to finetune its functionality. 
 
+	Inversion of Control
+
+		Is the process of GIVINP UP CONTROL of some functionality to another ENTITY.
+		Real world example: IoC would be like asking a Subway worker 
+			to make your sandwich as opposed to doing it yourself at home.
+
+		Dependency Injection(DI) design pattern
+			DI is a subset of IoC
+			The DI design pattern is SPECIFICALLY when the functionality you
+				give up is in cnotrol of your dpendency. The other ENTITY will 
+				then inject your dependencies into your classes when the need 
+				arises.
+
 What is Angular?
 	Scafolding to a frontend application, in HTML, CSS and JS/TS. 
 	We use this framework because cereating an applicaiton with just JS can becomem
@@ -13,6 +26,21 @@ What is Angular?
 	Angular is component based. Each PIECE of the heml page will 
 		actually be a fragment referred to as a "component"
 	A SPA framework. 
+
+History of Angular!
+
+	AngularJS came out on October 2010 (Angular JS)
+	Angular 4 - March, 2017
+	Angular 9 - February, 2020
+
+	AngularJS vs Angular not JS
+	Angular is JS-based one source fron-end framework. It doesn't support the features of 
+	server side programming languagre, nor dynamic loading of the page. 
+	AngularJS doesn't have support mobiles 
+	USed a MVC architecutre to build applications vs Angular is componend based to build application. 
+
+	Angular4+ is a complete rewrite of ANgularJS. Angular is built on component hierarchy. 
+	Angular JS is based on controllers and scopes. 
 
 SPA - Single Page Application?
 	SPA is a web application that fits on a single page in the browser. 
@@ -32,64 +60,3 @@ SPA - Single Page Application?
 			(but overall the performance is still better)
 		Doesn't perform well with SEO Serach engine optimization. 
 		SPA are less secure towards Cross-site (XSS) attacis. 
-
-
-What is a component?
-	A component is the building block of an Angular application. A component will
-	consist of 4 files:
-
-		<component-name>.component.html 
-		<component-name>.component.css
-		<component-name>.component.ts
-		<component-name>.component.spect.ts 
-
-
-A non-exhaustive list of files and folders in Angular:
-
-	.json files: These are configuration files 
-		tslint: configures the linting for our project. 
-		tsconfig: configures how we want to transpile. 
-		angular: configures  the angular project
-		package: configures the node.js environments
-
-	src: a folder for our source code
-	module.ts: configuration file
-	componet.*
-	index.html
-	app.* : 
-
-
-Directives and Binding 
-
-	Binding:
-		Interpolation (1 way binding) {{}}
-		Property  []
-		Event ()
-		2-way binding [()]
-
-	Directives:
-		Structural:
-			*ngIf
-			*ngFor
-		Atribute directives:
-			Custom one to pass values between parent and child componetns.
-	EventEmitters. 
-
-
-
-Inversion of Control
-
-	Is the process of GIVINP UP CONTROL of some functionality to another ENTITY.
-	Real world example: IoC would be like asking a Subway worker 
-		to make your sandwich as opposed to doing it yourself at home.
-
-	Dependency Injection(DI) design pattern
-		DI is a subset of IoC
-		The DI design pattern is SPECIFICALLY when the funcitnality you
-			give up is in cnotrol of your dpendency. The other ENTITY will 
-			then inject your dependencies into your classes when the need 
-			arises.
-	
-
-
-	

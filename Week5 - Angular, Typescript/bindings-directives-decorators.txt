@@ -1,0 +1,46 @@
+Binding:
+	Allow us to bind together values on our component view (.html) to our component model (.ts)
+	We have 4 ways of binding:
+
+		Interpolation (1-way binding) {{}}:
+			Allows us to basic operations (ternary expression) and use variables from .ts
+			in the html page. 
+		Property []:
+			Allows us to map attributes of an element to variables in the .ts
+		Event ():
+			Allows us to map functions to events. 
+		2-way binding [()] :
+			Allow us to bind the value both ways from the .html to .ts. (this can be also achieved
+			with interpolation and event binding, but [()] is much easier.)
+
+
+Directives:
+	Allow Angular to define non-html tags that can manipulate and manage the behaviour of the html page. 
+	
+	Structural directives:
+		Will modify the DOM structure, they can create, delete or otherwise manipulate elements within
+		the DOM, e.g.:
+			*ngIf
+			*ngFor
+			*ngSwitch
+
+	Attribute directives:
+		Will modifify the behaviour of an element. We can make our own custom attributie directive.
+		e.g. 
+			ngStyle
+
+	Component directives:
+		Matches an element to a class, this allows us to encapsulate the view of a component into a 
+		single tag. 
+
+
+@Decorators:
+	Provides meta data to Angular, for it to understand the purpose of this class. 
+	e.g.
+		@NgModule: defines this class to be a configuration file, 
+			used in ngModule and routing module
+		@Component: defines it to be a component, need to provide 
+				the templateUrl, styleUrl and selector
+		@Injectable: allows the injector in Angular to manage this class 
+				for us and "inject" this to where necessary.
+	

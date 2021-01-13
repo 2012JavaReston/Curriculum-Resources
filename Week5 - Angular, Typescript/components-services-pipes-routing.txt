@@ -1,0 +1,52 @@
+
+What is a component?
+	A component is the building block of an Angular application. A component will
+	consist of 4 files:
+
+		<component-name>.component.html 
+		<component-name>.component.css
+		<component-name>.component.ts
+		<component-name>.component.spect.t
+
+	The .ts file will need a decorator @Component for it to be understood as a component and
+	like everything else, also declared inside of our app.module.ts file. 
+
+
+Pipes:
+	Pipe will modify the view of our models without affecting the underlying data structure. 
+	There are pre-made pipes already, e.g. "UpperCase" and "Lowercase", and can be used inside of
+	an interpolation block of code. 
+	We can also create our own pipe, by adding @pipe to the top of the class and implementing a 
+	transform method. (or by using the CLI)
+
+Services:
+	Modularized functionality that is meant to be shared across the project to reduce redundant code. 
+	Will have @Injectable (or can be added to providers in app.module), so that the Injector in Angular 
+	can manage it for us. 
+	
+
+	
+
+Angular Routing
+	Following a single page application structure, we should use angular routing to get the most out of SPA. 
+	We need to have a few things set up before we can levarage it: 
+
+		app-router.module.ts: this contains the configuration details for routing
+			between components. 
+		
+		Routes : this is the set of objects with path to component mappings
+		
+		<router-outlet>: Acts as a placeholder, will dynamically switch between component
+			based on url/mapping.
+		
+		<routerLink>: This is a quicker way to navigate between components than 
+				a standard anchor tag. (we don't need to reload the page.)
+		
+	Extra: 
+		levarging path variables: Activated Router 
+		navigating based on events and functions: Router
+		Invoking route guarding: Modify the Route objects to have an additional property 
+			
+	
+
+	

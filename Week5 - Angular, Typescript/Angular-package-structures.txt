@@ -1,0 +1,20 @@
+Angular Package Structure:
+
+
+		package.json: It's a JSON file that exists at the root of a JS/node project.
+			It holds metadata relevant to the project. Used for managing the project's 
+			dependencies. 
+
+		tsconfig.json: It's a JSON file, that configures how Typescript is transpiled into
+			JavaScript. 
+
+		tslint.json: A file that configures what standards your code should follow. 
+
+		app.module.ts: Keeps track of all of your modules. 
+				(A module is basically a piece of code)
+
+		Webpack:
+			Used to bundle JavaScript modules into a single JavaScript file(s).
+			A module is just a file, one script is one module. Modules can be 
+			exported and imported by other modules. 
+		
