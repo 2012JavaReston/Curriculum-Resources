@@ -12,7 +12,21 @@
             <div class ='col-md-2'>Filter By: </div>
             <div class = 'col-md-4'>
 
-                <input type = 'text' placeholder="filter">
+                <!--
+                    The [()] syntax is used for 2-way data binding. Also, referred to as "apple in a box"
+                    The HTML values and TS are tied ot each other. If one changes, the other changes. 
+                    Hence, "2 way data binding"
+                -->
+
+                <input type = 'text' [(ngModel)]='inputField' placeholder="filter">
+            </div>
+        </div>
+        <div class = "row">
+            <div class = 'col-md-6'>
+                <h3> My Filter: {{inputField}}</h3>
+            </div>
+            <div class = 'col-md-6'>
+                <h3> Star Event : {{starEventString}}</h3>
             </div>
         </div>
     </div>
@@ -20,14 +34,14 @@
 
 </div>
 
-<div class = 'table-responsive'>
+<div class = 'table-responsive' >
 
-    <button class = 'btn btn-primary' (click) = 'toggleTable()'>
-        <!--Ternery expression " value? true : false"-->
+    <!-- <button class = 'btn btn-primary' (click) = 'toggleTable()'>
+        Ternery expression " value? true : false"
         {{showTable? 'Hide':'Show'}} Table
-    </button>
+    </button> -->
     <!-- *ngIf will also parse through truthy or falsey values-->
-    <table class = 'table' *ngIf = 'planets && showTable'>
+    <table class = 'table' *ngIf = 'filteredPlanets.length && showTable'>
         <thead>
             <tr>
                 <th>
@@ -54,7 +68,7 @@
                 Directives with an asteriks, *, are structural directives. 
             -->
 
-            <tr *ngFor = 'let i of planets'>
+            <tr *ngFor = 'let i of filteredPlanets'>
                 <td >
                     <!--Property binding, []-->
                     <img *ngIf = 'showImage' [src] = 'i.image' [title] = 'i.name'
@@ -62,11 +76,14 @@
                         [style.margin.px] = 'imageMargin'
                     >
                 </td>
-                <td> 
-                    {{i.name}}
+                <td appColorDirective> 
+                    {{i.name | prependpipe: 'Planet: ' | uppercase | lowercase}}
                 </td>
                 <td>
-                    {{i.livibility}}
+                    <!-- {{i.livibility}} -->
+                    <app-stars [livibility] = 'i.livibility' [name] = 'i.name'
+                        (starClicked)='starEventWasTriggered($event)'
+                    ></app-stars>
                 </td>
             </tr>
         </tbody>

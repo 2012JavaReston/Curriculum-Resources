@@ -1,1 +1,34 @@
-<app-planet-list></app-planet-list>
+<!-- <app-profile></app-profile> -->
+<!-- <app-planet-list></app-planet-list> -->
+<!-- <app-welcome></app-welcome>-->
+
+<div>
+    <nav class = 'navbar navbar-default'>
+        <div class = 'container fluid'>
+            <a class = 'navbar-brand'>Hello to my NavBar</a>
+        </div>
+        <ul class = 'nav navbar-nav'>
+            <li class = 'nav item'>
+                <a href = '/welcome'>Welcome</a>
+                <a routerLink = '/welcome'>Welcome,but quicker</a>
+            </li>
+            <li class = 'nav item'>
+                <a href = '/profile'>My profile</a>
+                <a routerLink = '/profile'>My profile, but quicker</a>
+            </li>
+            <li class = 'nav item'>
+                <a href = '/planets'>Planets page</a>
+                <a routerLink = '/planets'>Planet page, but quicker</a>
+            </li>
+            <li class = 'nav item'>
+                <a href = 'https://www.google.com/'>Google</a>
+                <a routerLink = 'https://www.google.com/'>Will Google work?</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+<router-outlet></router-outlet>
+<app-test></app-test>
+<!--This acts as a placeholder for my components, that can change based on the router-module configuration.-->
