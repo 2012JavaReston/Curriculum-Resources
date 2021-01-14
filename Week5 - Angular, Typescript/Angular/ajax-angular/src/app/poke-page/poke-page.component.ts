@@ -9,7 +9,7 @@ import { PokemonGeneratorService } from '../pokemon-generator.service';
 export class PokePageComponent implements OnInit {
 
   pokeName: string = 'Placeholder ';
-  pokeImage: string = 'https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png';
+  pokeImage: any = 'https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png';
   pokeId: number = 0;
 
 
@@ -45,12 +45,16 @@ export class PokePageComponent implements OnInit {
         const ourField1: any = 'name';
         const ourField2: any = 'sprites';
           const ourField2nested: any = 'front_default';
-
+        
         this.pokeName = data[ourField1];
+
+        let myPoke: object = JSON.parse(data);
+
+        console.log(myPoke);
 
         let tempArray; //need to create a temporary array 
         tempArray = data[ourField2];
-
+        
         this.pokeImage = tempArray[ourField2nested];
 
 
@@ -63,4 +67,19 @@ export class PokePageComponent implements OnInit {
 
   }
 
+  betterPokeButtonClicked(){
+    this.pokeGetter.setUrl(this.pokeId);
+
+    this.pokeGetter.actuallyCapturePokemon().subscribe(
+      (data) => {
+        console.log(data);
+
+        
+      
+        const ourField: string = 'front_default';
+        this.pokeName = data.name;
+        this.pokeImage = data.sprites[ourField];
+      }
+    )
+  }
 }
