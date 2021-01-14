@@ -1,0 +1,23 @@
+<div>
+
+
+    <div class = "container">
+        <div class = "jumbotron text-center">
+            <h3>Ajax Example</h3>
+            <span class = "label label-sucess">Using the REStful Pokemon</span>        
+        </div>
+    </div>
+
+    <div class = "info">
+        <div class = "text-center">
+            <h3>Pokemon name: {{pokeName}}</h3> <!-- 1 way binding using interpolation-->
+            <h3>Pokemon id: {{pokeId}}</h3>
+            <img [src] = 'pokeImage'>
+        </div>
+    </div>
+
+    <div class = "container">
+        <input type = 'number' class ="form-control" [(ngModel)] = 'pokeId'>
+        <button class ="form-control btn btn-info" (click)="pokeButtonClicked()">Capture Pokemon</button>
+    </div>
+</div>
