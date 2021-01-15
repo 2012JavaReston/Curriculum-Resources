@@ -1,0 +1,16 @@
+
+<div>
+    <h1>Our parent component example!</h1>
+
+    <p>This is the parent {{myValue}}</p>
+    <input type = "text" [(ngModel)] = "myValue">
+
+    <p> Not using 2-way binding {{staticy}}</p>
+    <button (click) = 'changeToFruit()'> Change to Blood Oranges</button>
+
+<app-trigger></app-trigger>
+<app-reaction [parentValue] = 'myValue' [anotherValue] = 'staticy'></app-reaction>
+
+
+</div>
+

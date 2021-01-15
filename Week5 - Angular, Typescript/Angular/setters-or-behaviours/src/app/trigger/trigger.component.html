@@ -1,0 +1,9 @@
+<div>
+
+    <p>Inside our trigger component! {{capturedSpeechBubble}}</p>
+    <p>This is NOT my speech bubble, this is a demo of 2 way binding again {{myInput}}</p>
+    <input type = "text" [(ngModel)] = "myInput">
+    <button (click) = 'changeSpeechBubbleWithSetter()'>Using Setter</button>
+    <button (click) = 'getMeMySpeechBubbleUsingGetter()'>Using Getter</button>
+    <button (click) = 'changeSpeechBubbleUsingBehave()'>Using Behavioural subjects</button>
+</div>
