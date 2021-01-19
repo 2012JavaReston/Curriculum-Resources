@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+		
+	<!-- When making a Spring bean, select context and beans -->
+	
+	<!-- What is a Spring bean?
+			A spring bean is an object that you've told Spring to manage for you. (Nothing to do with Java Bean)
+	 -->
+	 
+	 <!-- Below we're going to define a DAO object for Spring to create and manage for us -->
+	 <bean name = "PlanetDaoFIRST" class = "com.revature.dao.PlanetDaoImpl"></bean>
+	 <bean name = "PlanetDaoButBetter" class = "com.revature.dao.PlanetDaoImplButBetter"></bean>
+	 
+	 
+	 <!--  Scopes of a Spring Bean
+	 		Singleton (default) tells Spring to ONLY ever make one instance 
+	 		Prototype tells Spring that whenever someone asks for that bean, THEN create another instance of that bean. 
+	 		Request 
+	 		Session 
+	 		GlobalSession
+	  -->
+	  
+	  <!--  What is Bean Wiring?
+	  			Bean wiring is the process of telling Spring to manage objects for us, while also definiing what those 
+	  				object may have 
+	  			(spoilers: we can also do this using annotations)
+	  			
+	  			Types of injections: 
+	  				Constructors
+	  				Setters
+	  				Field
+	  				Interface (Extra)
+	   -->
+	 
+	 
+	 <!--  Let's create our service bean now! --> 
+	 <!-- Manual WIRING -->
+	 <!--  CONSTRUCTOR INJECTION -->
+	 <bean name = "PlanetServiceFIRST" class = "com.revature.service.PlanetServiceImpl" scope = "prototype">
+	 	<constructor-arg index = "0" ref = "PlanetDaoFIRST"></constructor-arg>
+	 </bean>
+	 
+	 <bean name = "PlanetServiceButBetter" class = "com.revature.service.PlanetServiceImpl">
+	 	<constructor-arg index = "0" ref = "PlanetDaoButBetter"></constructor-arg>
+	 	<constructor-arg index = "1" type = "String" value = "Fiji"></constructor-arg>
+	 </bean>
+	 
+	 <!-- SETTER INJECTION -->
+	 <bean name = "PlanetServiceSetter" class = "com.revature.service.PlanetServiceImpl">
+	 	<property name = "pDao" ref = "PlanetDaoFIRST"></property>
+	 </bean>
+	 
+		
+</beans>

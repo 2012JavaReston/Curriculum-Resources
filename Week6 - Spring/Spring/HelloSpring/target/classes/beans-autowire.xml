@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 
+	
+		What is Autowiring?
+			Autowiring is when Spring scans your objects to determine WHICH dependencies it needs!
+			
+			Injection vs Autowiring?
+				Injection is HOW to inject Dependencies
+				Autowiring is asking WHICH dependencies do we need. 
+				
+			Autowiring modes: 
+				"no" : means Spring will not autowire anything. This is the default setting
+				"byType": means Spring will look at the class' datatyppes then amtch those datatypes to our beans in the IoC Container. 
+					Injection strategy: Setter
+				"ByName": means Spring will look at the class' propety variable name, then match those to the IoC container. 
+					To make it work Bean Name == Class' property name 
+					Injection strategy: Setter
+				"constructor": works similar to byType, except it injects using the constructor with the most dependency. 
+						If the byType strategy fails, then the constructor setting will turn to the byName strategy. 
+					Injection Strategy: Constructor
+		
+	 -->
+	 
+	 
+	 <bean name = "pDao" class = "com.revature.dao.PlanetDaoImpl"></bean>
+	 <bean name = "authBean" class = "com.revature.security.AuthLayer"></bean>
+	 <!-- Letting Spring detect what dependencies our service bean needs -->
+	 <bean name = "PlanetServiceAuto" class = "com.revature.service.PlanetServiceImpl" autowire = "byName"></bean>
+	 <bean name = "PlanetServiceAutoName" class = "com.revature.service.PlanetServiceImpl" autowire = "byName"></bean>
+	 <bean name = "PlanetServiceAutoConstruct" class = "com.revature.service.PlanetServiceImpl" autowire = "constructor"></bean>
+
+</beans>
