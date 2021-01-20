@@ -73,17 +73,6 @@ public class ProxyApp {
 		return 0;
 	}
 	
-	/*
-	 * ASPECT?
-	 * 
-	 * ADVICE?
-	 * 
-	 * POINTCUT EXPRESSION?
-	 * 
-	 * JOINPOINT?
-	 * 
-	 * CROSS CUTTING CONCERN? 
-	 * 
-	 */
+
 
 }
