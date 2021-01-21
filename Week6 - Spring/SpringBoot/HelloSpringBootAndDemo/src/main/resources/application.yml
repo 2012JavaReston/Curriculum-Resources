@@ -1,0 +1,18 @@
+#server.port = 9090
+server:
+  port: 9090
+  
+ #spring.datasource.url 
+ #spring.datasourced.username
+spring:
+  datasource:
+    url: jdbc:postgresql://database-1.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres
+    username: postgres
+    password: p4ssw0rd
+    driver-class-name: org.postgresql.Driver
+  jpa:    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    properties:      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
