@@ -16,7 +16,7 @@ public class Planet {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(name = "planet_name")
+	@Column(name = "planet_name", nullable = false)
 	private String name;
 	
 	

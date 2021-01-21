@@ -30,6 +30,10 @@ public class PlanetRepo {
 		return sesFact.getCurrentSession().createQuery("from Planet", Planet.class).list();
 	}
 	
+	public Planet selectPlanetById(int id) {
+		return sesFact.getCurrentSession().get(Planet.class, id);
+	}
+	
 
 	public void update(Planet p) {
 		sesFact.getCurrentSession().update(p);
