@@ -12,8 +12,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 		
 		
-	<!-- Turn on MVC annotations -->
-	<mvc:annotation-driven/>
+	
 
 	<!-- We need to turn on annotations first -->
 	<context:annotation-config/>
@@ -71,5 +70,20 @@
 				
 	<bean id="transactionManager" class = "org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name = "sessionFactory" ref = "sessionFactory"/>
+	</bean>
+	
+	
+	<!-- MVC related stuff now! -->
+	
+	<!-- Turn on MVC annotations -->
+	<mvc:annotation-driven/>
+	
+	<bean id="viewResolver" class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name = "prefix">
+			<value>/super/special/views/</value>
+		</property>
+		<property name = "suffix">
+			<value>.html</value>
+		</property>
 	</bean>
 </beans>
