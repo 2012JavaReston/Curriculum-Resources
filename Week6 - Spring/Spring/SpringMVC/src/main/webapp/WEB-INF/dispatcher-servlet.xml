@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		
+		
+	<!-- Turn on MVC annotations -->
+	<mvc:annotation-driven/>
+
+	<!-- We need to turn on annotations first -->
+	<context:annotation-config/>
+	
+	<!-- Spring will can all packages and subpackages that start with "com" -->
+	<context:component-scan base-package="com"></context:component-scan>
+	
+	<!--  Turning on tx annotations (Spring ORM) -->
+	<tx:annotation-driven/>
+	
+	
+	<!--  DATASOURCE
+			This bean is a JDBC instance
+			Datasource is an object that holds all atrributes necessary to connect to any database -->
+			
+	<bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name = "driverClassName" value ="org.postgresql.Driver"></property>
+		<property name = "url" value ="jdbc:postgresql://database-1.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres"></property>
+		<property name = "username" value ="postgres"></property>
+		<property name = "password" value ="p4ssw0rd"></property>
+	</bean>
+	
+	
+	<!-- SESSIONFACTORY 
+			This is a bean, a Hibernate instance. 
+			Session factory is an object that is responsible for creating Hibernate sessions.-->
+			
+	<bean id = "sessionFactory" class = "org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name = "dataSource" ref = "dataSource"/> <!-- This is the details to connect to our db -->
+		<property name="packagesToScan" value = "com.revature.models"/> <!-- This is the details of our POJOs -->
+		<property name = "hibernateProperties"> <!-- Hibernate specific properites -->
+			<props>
+				<prop key = "hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key = "hibernate.hbm2ddl.auto">create</prop>
+				<prop key = "hibernate.show_sql">false</prop>
+				<prop key = "hibernate.format_sql">false</prop>
+			</props>
+		</property>
+		
+		
+	</bean>
+	
+	<!--  TRANSACTION MANAGER
+			This bean is a Hibernate instance
+			This bean is responsible for managing our .... transactions
+				and also our contextual sessions. 
+				
+			What are contextual sessions?
+				Contextual session are geenerated by "getCurrentSession()". It provides a session object which is in hibernate
+					context and managed by hibernate. It's scope is bound to a transcation. 
+					
+					.getCurrentSession() will create a sessiuno if none already exists. The session is managed by Hibernated 
+					(faster in a single threaded environment)
+				-->
+				
+	<bean id="transactionManager" class = "org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name = "sessionFactory" ref = "sessionFactory"/>
+	</bean>
+</beans>
