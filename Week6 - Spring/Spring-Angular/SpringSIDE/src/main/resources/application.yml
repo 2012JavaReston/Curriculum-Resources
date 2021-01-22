@@ -1,0 +1,21 @@
+
+#YAML Ain't Markup Language 
+#Human readable serializable language, used for configuration. 
+
+server:  port: 9999
+  
+#management:#  endpoints:#    web:#      exposure:#        include:#        - "*"
+  
+spring:
+  datasource:    url: jdbc:postgresql://database-1.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true

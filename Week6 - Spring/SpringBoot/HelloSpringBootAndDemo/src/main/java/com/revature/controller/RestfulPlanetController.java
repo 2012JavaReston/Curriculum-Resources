@@ -25,6 +25,10 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class RestfulPlanetController {
 	
+	/*
+	 * Restful controller vs controller
+	 */
+	
 	private PlanetDao planetDao;
 
 	/*
