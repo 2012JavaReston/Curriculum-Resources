@@ -1,0 +1,20 @@
+#Zuul configuration
+
+server:
+  port: 7100
+  
+spring:  application:    name: Planet-Zuul
+    
+
+#Now we start going Zuul specific 
+
+zuul:
+  ignored-patterns: /actuator/**
+  routes:    tres-leches:
+      path: /api/InnerPlanets
+      service-id: planet-two
+      strip-prefix: false
+    allOfThem:
+      path: /**
+      service-id: planet-one
+      strip-prefix: true

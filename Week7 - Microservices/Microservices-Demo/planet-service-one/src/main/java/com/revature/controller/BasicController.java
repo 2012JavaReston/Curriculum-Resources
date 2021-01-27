@@ -12,7 +12,7 @@ public class BasicController {
 	@Value("${message: Here is my special message, all the way from config!}")
 	private String message;
 	
-	@Value("${server.port: 9010}") //The @Value is retrieving a config attribute called "server.port"
+	@Value("${server.port}") //The @Value is retrieving a config attribute called "server.port"
 	private String serverPort;
 	
 	@GetMapping("/")
