@@ -7,7 +7,7 @@ spring:  application:    name: Planet-Zuul
     
 
 #Now we start going Zuul specific 
-
+#Ribbon is built into Zuul
 zuul:
   ignored-patterns: /actuator/**
   routes:    tres-leches:
@@ -15,6 +15,6 @@ zuul:
       service-id: planet-two
       strip-prefix: false
     allOfThem:
-      path: /**
+      path: /** #/* vs /**
       service-id: planet-one
-      strip-prefix: true
+      strip-prefix: true #What is a strip-prefix.... ? 
