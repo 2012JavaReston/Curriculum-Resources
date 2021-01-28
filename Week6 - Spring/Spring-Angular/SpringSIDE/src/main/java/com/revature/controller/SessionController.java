@@ -12,7 +12,7 @@ import com.revature.models.Message;
 import com.revature.models.User;
 
 @Controller("sessionManagementController")
-@CrossOrigin(origins = {"http://localhost:4200","http://localhost:4444"}, allowCredentials = "true")
+@CrossOrigin(origins = {"*","http://localhost:4444"}, allowCredentials = "true")
 /*
  * If you don't add "http://" at the start of your request URIs in Angular, then you can STILL get CORS issues. 
  */

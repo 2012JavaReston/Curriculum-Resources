@@ -1,0 +1,63 @@
+To get consul working:
+
+	install consul (using package manager)
+	run consul: consul agent -dev (don't do this in a production environment)
+	
+	Add consul dependency to project
+	Add a property field called: spring.cloud.consul.discovery.instance-id
+
+	Check on localhost:8500 for information. 
+
+
+Consul: (service registry)
+	problem: As a developer or maintainer, we want a simple way to track 	
+		all of our service (instances)
+
+	Service-registry provides us a way of doing that.
+
+	It utilises the client-service's actuator endpoints. 
+	Consul will do a "heart-beat" every so often, to check whether 
+	each service instance is up and healthy. 
+
+Netflix OSS stack: 
+
+	Zuul: (Unified API gateway)
+		problem: Our eco-system are split into multiple ports/services. 
+			We don't want our users to know that and to navigate manually 
+			to different services. 
+
+		Provides a single point of access to multiple services. 
+
+		"Zuul is an edge service that proxies requests to multiple backing services. 
+		It provides a unified "front door" to our system. Whichc allows a vrowser, mobile app or 
+		any other example of user interfaces to consume services from multiple hosts. 
+		It means we also don't need to manage cross-orgigin rsources sharing and each service 
+		doesn't need to authenticate each other"
+
+	Hystrix: (circuit breaker)
+
+		problem: What happens if one of our services id down, due to an outage for example. 
+		
+		Hystrix is designed to sstop cascading failures and enable resilience in a distributed system.
+
+		"Hystrix is a latency and fault tolerancy literary designed to isolate points of access to remote systems,
+		services adn 3rd parth libraries, stop cascading failures and enable resilience in complex distributed system 
+		where failure is inevtiable" 
+
+	Ribbon (load balancer)
+
+		Ribbon is a load balancer. It routes traffic to the appropriate service (so the server deosn't crash under 
+		the load) Other services like Zuul can integrate it into their own routing service.
+
+	RabbitMQ (messaging queue) 
+
+
+Boostrap vs Applicaiton 
+
+	Application files are used to configure our Spring Boot Projects. We use it to override 
+	the default values set by SpringBoot. 
+	Using Spring Cloud means we have multiple contexts. in our case we consider the main application context and boostrap
+	context. Boostrap context being the parent context. 
+
+	Bootstrap context is responsible for loading configuration porperties from external sources. 
+	
